@@ -20,7 +20,7 @@ body {
 /* Bild wird kleiner auf kleinen Bildschirmen */
 
 img {
-    max-width: 90em;
+    max-width: 0.9em;
     height: auto;
     margin-bottom: 20px;
 }
