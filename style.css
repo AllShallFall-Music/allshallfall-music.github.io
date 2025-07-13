@@ -8,11 +8,14 @@ body {
     justify-content: center;
     text-align: center;
     padding: 20px;
+    background-color: black;
+    
 }
 
 /* Container beschränkt die Breite auf kleinen Geräten */
 .container {
     max-width: 100%;
+    
 }
 
 /* Bild wird kleiner auf kleinen Bildschirmen */
@@ -27,6 +30,7 @@ img {
 h1 {
     color: aqua;
 }
-p {
+p1 {
     font-size: 1.2em;
+    color: tomato;
 }
