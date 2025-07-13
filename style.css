@@ -12,8 +12,7 @@ body {
 
 /* Container beschränkt die Breite auf kleinen Geräten */
 .container {
-    max-width: 90%;
-    background-color: rgb(rgb(41, 38, 38), green, blue);
+    max-width: 100%;
 }
 
 /* Bild wird kleiner auf kleinen Bildschirmen */
@@ -30,5 +29,4 @@ h1 {
 }
 p {
     font-size: 1.2em;
-    color: red;
 }
