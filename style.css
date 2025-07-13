@@ -1,10 +1,10 @@
-/* Gesamte Seite: Höhe 100%, zentrieren mit Flexbox */
+/* Gesamte Seite: Höhe 100%, oben, zentriert mit Flexbox */
 body {
     margin: 0;
     height: 100vh;
     font-family: Arial, Helvetica, sans-serif;
     display:flex;
-    align-items: center;
+    align-items: start;
     justify-content: center;
     text-align: center;
     padding: 20px;
