@@ -1,10 +1,31 @@
+/* Gesamte Seite: Höhe 100%, zentrieren mit Flexbox */
 body {
-    background-color: black;
+    margin: 0;
+    height: 100vh;
+    background-color:'#111';
     color: white;
     font-family: Arial, Helvetica, sans-serif;
+    display:flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 50px;
+    padding: 20px;
 }
+
+/* Container beschränkt die Breite auf kleinen Geräten */
+.container {
+    max-width: 90%;
+}
+
+/* Bild wird kleiner auf kleinen Bildschirmen */
+
+img {
+    width: 50%;
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
 
 h1 {
     color: aqua;
