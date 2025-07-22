@@ -1,13 +1,13 @@
-/* Gesamte Seite: Höhe 100%, oben, zentriert mit Flexbox */
+/* Gesamte Seite: Höhe 100%, zentrieren mit Flexbox */
 body {
     margin: 0;
     height: 100vh;
     font-family: Arial, Helvetica, sans-serif;
     display:flex;
-    align-items: start;
+    align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 20px;
+    padding: 40px;
     background-color: black;
     
 }
@@ -21,16 +21,70 @@ body {
 /* Bild wird kleiner auf kleinen Bildschirmen */
 
 img {
+    display: block;
+    margin: 2vh auto 5vh auto;
     width:90%;
     height: auto;
     margin-bottom: 20px;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: aqua;
+    
 }
 
 
 h1 {
     color: aqua;
+    border-style: double ;
+    border-radius: 5px;
 }
 p1 {
     font-size: 1.2em;
     color: tomato;
+}
+
+p2 {
+    color: beige;
+    font-size: 15px;
+}
+h2 {
+    font-size: 50px;
+    text-decoration: underline;
+    color: aliceblue;
+    
+}
+section {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+.posts {
+    background-color: rgb(41, 2, 25);
+    border-radius: 30px;
+    border-style: solid;
+    border-color: aqua;
+    
+    
+   
+}
+
+.post {
+    border: 5px;
+    background-color:rgb(41, 2, 25);
+    border-style: solid;
+    border-color: aqua;
+    border-radius: 3px;
+    margin-bottom:  5px;
+    width: 50em;
+    
+
+
+}
+
+footer {
+    color: beige;
+    display: block;
+    margin-top: 10em;
 }
