@@ -49,14 +49,9 @@
          <footer>
             Hier kommt bald text Impressum oder was auch immer noch wichtig ist.
 
-                 <p>Besucherzähler: <span id="visits"></span></p>
-
-                    <script>
-                      fetch('https://api.countapi.xyz/hit/allshallfall-music/visits')
-                        .then(res => res.json())
-                        .then(res => {
-                          document.getElementById('visits').innerText = res.value;
-                        });
-                    </script>
+                     <a href="https://www.hitwebcounter.com" target="_blank">
+                          <img src="https://hitwebcounter.com/counter/counter.php?page=123456&style=0006&nbdigits=5&type=page&initCount=0" 
+                           title="Besucherzähler" alt="Besucher" border="0" />
+                     </a>
          </footer>
     </html>     
