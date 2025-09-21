@@ -1,0 +1,36 @@
+<Doktype html>
+    <html lang="de">
+
+    <head>
+        <meta charset="UTF8">
+        <meta name="viewport" content="witdh=device-witdh,initial-scale=1.0">
+        <title>Was ich nutze. Instruments I actually use.</title>
+        <link rel="stylesheet" href="style2(whatIuse).css">
+    </head>
+<!----------------------------OBEN---------------------------------------------------->
+<header>
+     
+        <img src="img/ASF_Logo_Colored_Pixschadow.jpg" class="container-head" id="LOGO-Head">
+    
+</header>
+<!-------------------------------------------------------------------------------->
+        <body>
+            <div>
+                <h1>Box1</h1>
+                <h1>Box2</h1>
+                <h1>Box3</h1>
+                <h1>Box4</h1>
+                <h1>Box5</h1>
+                <h1>Box6</h1>
+                <h1>Box7</h1>
+                <h1>Box8</h1>
+                <h1>Box9</h1>
+            </div>
+        </body>
+
+<!-----------------------------UNTEN---------------------------------------------->  
+
+
+<footer>
+    <a class="Backlink" href="allschall-music.github.io"  > Zurück zur Homepage </a>
+</footer>
