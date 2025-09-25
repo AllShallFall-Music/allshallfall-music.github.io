@@ -48,6 +48,10 @@ body {
                             color: rgb(235, 235, 167);
                             font-size: 15px;
                         }
+                        /* P5 für Datum*/
+                        p5 {
+                            font-size: 15px;
+                        }
 
                         h2 {
                             font-size: 50px;
