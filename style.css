@@ -30,7 +30,7 @@ body {
                         }
                             img{
                                 width: 90%;
-                                border-radius: 30px;
+                                border-radius: 5px;
                             }
                         /*------------------------------------------------------*/
 
@@ -50,11 +50,10 @@ body {
                             font-size: 15px;
                         }
                         /* P5 für Datum*/
-                        p5 {
-                            display: block;
+                        p5 { display: block;
                             font-size: 15px;
                             color: lightgray;
-
+                            
                         }
 
                         h2 {
