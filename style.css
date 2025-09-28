@@ -67,53 +67,76 @@ body {
                             color: beige;
                         }    
                         /* Blogbereich*/
-                        section {
-                            display: flex;
-                            width: 90vw;
-                            flex-direction: column-reverse;
-                            justify-content: center;
-                            align-items: center;
-                            
+                                            section {
+                                                display: flex;
+                                                width: 80vw;
+                                                flex-direction: column-reverse;
+                                                justify-content: center;
+                                                align-items: center;
+                                                
 
-                            background-color: rgb(41, 2, 25);
-                            border-radius: 30px;
-                            border-style: solid;
-                            border-color: aqua;
-                            
-                            padding: 20px;
-                        }
+                                                background-color: rgb(41, 2, 25);
+                                                border-radius: 30px;
+                                                border-style: solid;
+                                                border-color: aqua;
+                                                
+                                                padding: 20px;
+                                            }
 
-                        
+                                            
 
 
-                        /*----------Blogeinträge----------*/
+                                            /*----------Blogeinträge----------*/
 
-                            .post {
-                                width: 80%;
-                                background-color:rgb(41, 2, 25);
-                                border-style: solid;
-                                border-color: rgb(6, 150, 30);
-                                border-radius: 30px;
-                                padding: 20px;
-                                
+                                                .post {
+                                                    width: 80%;
+                                                    background-color:rgb(41, 2, 25);
+                                                    border-style: solid;
+                                                    border-color: rgb(6, 150, 30);
+                                                    border-radius: 30px;
+                                                    padding: 20px;
+                                                    
 
-                               
-                                justify-content: center;
-                                align-items: center;
+                                                
+                                                    justify-content: center;
+                                                    align-items: center;
 
-                                margin-bottom: 10px;
-                                }
+                                                    margin-bottom: 10px;
+                                                    }
+
+                                                /*----------Bilder in den Blogeinträgen----------*/
+                                                .post img {
+                                                    max-width: 50%;
+                                                    height: auto;
+                                                    border-radius: 10px;
+                                                    border-style: solid;
+                                                    border-color: aqua;
+                                                    border-width: 5px;
+                                                    margin-top: 10px;
+                                                    margin-bottom: 10px;
+                            }
                             /*----------Links----------*/
+
                             .firstlink a {
+                                    display: block;
                                     color: beige;
                                 }
                             .firstlink a:hover {
                                 color: gold;
                             }
 
-                            a {
-                                display: block;
+                            .external-Links {
+                                display: inline-block   ;
+                                color: lightcyan;
+                                background-color: rgb(18, 148, 29);
+                                padding: 5px;
+                                border-radius: 10px;
                             }
+                            .external-Links:hover {
+                                color: gold;
+                            }
+
+
 
                              @media (max-width: 800px) {
                                 iframe {width: 90%; height: auto;}
@@ -122,16 +145,36 @@ body {
 
 /*------------------------------UNTEN-------------------------------------------------*/
 footer {
+    display: flex;
+
     color: beige;
     border-radius: 30px;
     background-color: darkslategray;
     padding: 10px;
     margin-top: 10px;
 
-.hitcounter {
-    width: 150px;
-    height: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;}
-
 }
+                    /*Flex:1 Verteilt die drei divs gleichmäßig im footer*/
+                    .footerlinks {                       
+                        flex: 1;
+                    }
+                    .footermitte{ 
+                        flex: 1;
+                    }
+                    .footerrechts{      
+                        flex: 1;
+                    }
+
+
+                    .hitcounter {
+                        width: 150px;
+                        height: auto;
+                        margin-top: 10px;
+                        margin-bottom: 10px;
+
+                    }
+
+                    @media (max-width: 800px) {
+                        footer {flex-direction: column;}
+                            
+                    }
