@@ -1,11 +1,13 @@
 
 body {
     margin: 20px;
-    height: 50vh;
+    height: 100%;
     font-family: Arial, Helvetica, sans-serif;
+
     display:flex;
     justify-content: center;
     text-align: center;
+
     padding: 40px;
     background-color: black;
     
@@ -15,13 +17,10 @@ body {
                         .container {
                             display: block;
 
-                            margin-left: auto;
-                            margin-right: auto;
-
                             max-width: 95vw;
 
                             background-color: rgb(14, 36, 36);
-                            padding: 5px;
+                            padding: 10px;
                             border-style: double;
                             border-color: aqua;
                             border-radius: 30px;
@@ -65,10 +64,29 @@ body {
                         h3 {
                             font-size:30px ;
                             color: beige;
+                            margin: 10px;
                         }    
                         /* Blogbereich*/
-                                            section {
+
+                        .Hauptbereich {
+                            display: flex;
+                            max-width: 95vw;
+                            flex-direction: row;
+
+                            border-style: solid;
+                            border-color: tomato;
+
+                        }
+                                            .LinkeLinks, .RechteÜbersicht {
+                                                border-style: solid;
+                                                border-color: aqua;
+                                                border-radius: 30px;
+                                                margin: 20px;
+
+                                            }
+                                            .Postcontainer {
                                                 display: flex;
+                                                
                                                 width: 80vw;
                                                 flex-direction: column-reverse;
                                                 justify-content: center;
@@ -81,7 +99,14 @@ body {
                                                 border-color: aqua;
                                                 
                                                 padding: 20px;
+                                                margin: 20px;
                                             }
+
+                                            @media (max-width: 800px) {
+                                                .LinkeLinks, .RechteÜbersicht {display: none;} 
+                                                }
+                                                
+                                            
 
                                             
 
@@ -140,7 +165,7 @@ body {
 
                              @media (max-width: 800px) {
                                 iframe {width: 90%; height: auto;}
-                  }
+                                }
 
 
 /*------------------------------UNTEN-------------------------------------------------*/
