@@ -3,43 +3,115 @@
 >
          <head>
             <meta charset="UTF8">
-            <title>AllShallFall First official site. Music an more! DICE GAME</title>
+            <title>Würfel AllShallFall First official site. Music an more! DICE GAME</title>
          </head>
+<!--      Style     -->
+        <style>
+                    body {
+                        display: block;
+                        align-content: center;
+                        align-items: center;
 
-<style>
-            body {
-                /*Würfelbutton*/
+                        background-color: black;
+                    }
+                    div {
+                        text-align: center;
+                        color: white;}
+                        
+                    
 
-                button {
-                padding: 10px 20px;
-                font-size: 1.2em;
-                cursor: pointer;
-                border-radius: 10px;
-                border: none;
-                background: #4CAF50;
-                color: white;
-                }
+                        /*Würfelbutton*/
 
-                button:hover {
-                    background: #45a049;
-                }
-            }
-</style>
+                        button {
+
+                        padding: 10px 20px;
+                        font-size: 1.2em;
+                        cursor: pointer;
+                        border-radius: 10px;
+                        border: none;
+                        background: #4CAF50;
+                        color: white;
+                        }
+
+                        button:hover {
+                            background: #45a049;
+                        }
+
+                        #result {
+                            color: white;
+                            text-align: center;
+                        }
+
+                        h1 
+                        {
+                            color: white;
+                            text-align: center;
+                            font-size: 2.5em;
+                            margin-top: 20px;
+                        }
+                    
+        </style>
 
 
-            <body>
+           <!-----------------------------------------  HTML UNTEN     ---------------------------------          -->
 
-                <h1>🎲 Würfel Simulator</h1>
+        <body>
 
-            <div id="result">Klicke auf "Würfeln"!</div>
+                                                                        <h1>🎲 Würfel Simulator</h1>
 
-            <button onclick="rollDice()">Würfeln</button>
+            <div id="dice1">Klicke auf "Würfeln"!</div>
+            <div id="dice2">Klicke auf "Würfeln"!</div>
+            <div id="dice3">Klicke auf "Würfeln"!</div>
+
+                          <!-- Gewinn-Animation -->
+                                <div id="FreshMeat" style="display:none; text-align:center;">
+                                    <img src="FreshMeat.gif" width="300" alt="AHHHH.FreshMEAT">
+                                </div>
+
+
+            <!--BUTTON  -->  <div><button onclick="rollDice()">Würfeln</button></div>
 
             <script>
-    function rollDice() {
-      const number = Math.floor(Math.random() * 6) + 1;
-      document.getElementById("result").textContent = "Du hast eine " + number + " gewürfelt!";
-    }
-  </script>
+                       /*FORMEL und Begrenzung auf 3 MAL würfeln */  
+                                    
+                                    function rollDice()  {
+                                    let results = [];       
+                                    { for (let i = 1; i <= 3; i++)  {
+                                        
+                                    let number = Math.floor(Math.random() * 6) + 1;
+                                    
+                                    results.push(number); // Zahl speichern
 
-            </body>
+                                    document.getElementById(`dice${i}`).textContent = "Du hast eine " + number + " gewürfelt!";
+                                    }
+                                    console.log("Ergebnisse dieses Wurfs:", results);
+                                
+
+                                /*Prüfen, ob alle drei Würfel eine 6 zeigen*/
+                                           /* if (results[0] === results[1] && results[1] === results[2])*/ 
+                                             if (results.every(num => num === 6))
+                                                                                            // Animation anzeigen
+                                                                                           { const anim = document.getElementById("FreshMeat");
+                                                                                            anim.style.display = "block";
+
+                                                                                            // Optional: nach 5 Sekunden wieder ausblenden
+                                                                                            setTimeout(() => {
+                                                                                                anim.style.display = "none";
+                                                                                            }, 5000);
+
+                                                                                            // Ton abspielen (wenn vorhanden)
+                                                                                            const audio = new Audio("Ahhh_fresh_meat!.mp3");
+                                                                                            audio.play();
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                                    
+                        
+            </script>
+
+                                                                                  
+
+                                                                                        
+                                                                               
+
+        </body>
