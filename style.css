@@ -8,10 +8,13 @@ body {
     justify-content: center;
     text-align: center;
 
+
+
     padding: 40px;
     background-color: black;
     
 }
+
 /*-------------------------------------------------------------------------------*/
                         /* Kopfbereich der Page LOGO etc.*/
                         .container {
@@ -71,6 +74,7 @@ body {
                         .Hauptbereich {
                             display: flex;
                             max-width: 95vw;
+                            
                             flex-direction: row;
 
                             border-style: solid;
@@ -85,23 +89,29 @@ body {
 
                                             }
                                             .Postcontainer {
+
                                                 display: flex;
                                                 
                                                 width: 80vw;
-                                                flex-direction: column-reverse;
-                                                justify-content: center;
+                                                max-height: 700px;
+                                                flex-direction: column;
+                                                justify-content: flex-start;
                                                 align-items: center;
-                                                
 
+                                                overflow-y: auto;
+                                            
+                                            
                                                 background-color: rgb(41, 2, 25);
                                                 border-radius: 30px;
                                                 border-style: solid;
                                                 border-color: aqua;
                                                 
-                                                padding: 20px;
+                                                padding: 100px;
                                                 margin: 20px;
+                                           
+                                            
                                             }
-
+                                                /*Blendet Seite auf mobilen Geräten aus*/
                                             @media (max-width: 800px) {
                                                 .LinkeLinks, .RechteÜbersicht {display: none;} 
                                                 }
@@ -121,7 +131,6 @@ body {
                                                     border-radius: 30px;
                                                     padding: 20px;
                                                     
-
                                                 
                                                     justify-content: center;
                                                     align-items: center;
@@ -155,15 +164,25 @@ body {
                                 color: lightcyan;
                                 background-color: rgb(18, 148, 29);
                                 padding: 5px;
+                                margin: 5px;
                                 border-radius: 10px;
                             }
                             .external-Links:hover {
                                 color: gold;
                             }
 
+                            .internal-links {
+                                display: inline-block   ;
+                                color:lightcyan;
+                                background-color: rgb(98, 148, 18);
+                                padding: 5px;  
+                                margin: 5px;
+                                border-radius: 10px;
+                            }
 
 
-                             @media (max-width: 800px) {
+
+                             @media (max-width: 1300px) {
                                 iframe {width: 90%; height: auto;}
                                 }
 

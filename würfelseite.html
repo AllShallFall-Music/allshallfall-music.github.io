@@ -46,7 +46,16 @@
                         {
                             color: white;
                             text-align: center;
-                            font-size: 2.5em;
+                            font-size: 3em;
+                            margin-top: 20px;
+                        }
+
+
+                        h2 
+                        {
+                            color: white;
+                            text-align: center;
+                            font-size: 2em;
                             margin-top: 20px;
                         }
                     
@@ -57,11 +66,42 @@
 
         <body>
 
-                                                                        <h1>🎲 Würfel Simulator</h1>
+                                                                        <h1>🎲 Würfel Simulator</h1> <!----Überschrift------>
+            <div>
+                 <img src="Würfelseiten/Dice1.png" width="100" alt="Würfel 1">
+                 <img src="Würfelseiten/Dice2.png" width="100" alt="Würfel 2">
+                 <img src="Würfelseiten/Dice1.png" width="100" alt="Würfel 3">
+                 <img src="Würfelseiten/Dice1.png" width="100" alt="Würfel 1">
+                 <img src="Würfelseiten/Dice1.png" width="100" alt="Würfel 2">
+                 <img src="Würfelseiten/Dice1.png" width="100" alt="Würfel 3">
+                 <img src="Würfelseiten/Dice3.png" width="100" alt="Würfel 1">
+                 <img src="Würfelseiten/Dice1.png" width="100" alt="Würfel 2">
+                 <img src="Würfelseiten/Dice1.png" width="100" alt="Würfel 3">
+                 <img src="Würfelseiten/Dice1.png" width="100" alt="Würfel 1">
+                 <img src="Würfelseiten/Dice4.png" width="100" alt="Würfel 2">
+                 <img src="Würfelseiten/Dice1.png" width="100" alt="Würfel 3">
+                 <img src="Würfelseiten/Dice1.png" width="100" alt="Würfel 1">
+                 <img src="Würfelseiten/Dice5.png" width="100" alt="Würfel 2">
+                 <img src="Würfelseiten/Dice1.png" width="100" alt="Würfel 3">
+                 <img src="Würfelseiten/Dice6.png" width="100" alt="Würfel 1">
+                 <img src="Würfelseiten/Dice1.png" width="100" alt="Würfel 2">
+            </div> 
+                
+                                                                                                
 
-            <div id="dice1">Klicke auf "Würfeln"!</div>
-            <div id="dice2">Klicke auf "Würfeln"!</div>
-            <div id="dice3">Klicke auf "Würfeln"!</div>
+            <h2>Klicke auf Würfeln</h2>
+
+            <div>
+                <h3 id="dice1">🎲</h3>
+                <h3 id="dice2">🎲</h3>
+                <h3 id="dice3">🎲</h3>
+
+                <img id="diceimg1"   alt="Würfel 1"        width="100">
+                <img id="diceimg2"   alt="Würfel 2"        width="100">
+                <img id="diceimg3"   alt="Würfel 3"        width="100">    
+
+            </div>
+            
 
                           <!-- Gewinn-Animation -->
                                 <div id="FreshMeat" style="display:none; text-align:center;">
@@ -71,20 +111,46 @@
 
             <!--BUTTON  -->  <div><button onclick="rollDice()">Würfeln</button></div>
 
+
+<!--------------------------------------------------------script------------------------------------------------------->
+
+
+
             <script>
+                const dicesymbols = [                                           //Bestimmung von Konstanten für die Bilder der Würfelseiten
+                                        "Würfelseiten/Dice1.png",
+                                        "Würfelseiten/Dice2.png",   
+                                        "Würfelseiten/Dice3.png",
+                                        "Würfelseiten/Dice4.png",
+                                        "Würfelseiten/Dice5.png",
+                                        "Würfelseiten/Dice6.png"
+                                    ];
+
+
                        /*FORMEL und Begrenzung auf 3 MAL würfeln */  
                                     
-                                    function rollDice()  {
-                                    let results = [];       
-                                    { for (let i = 1; i <= 3; i++)  {
-                                        
-                                    let number = Math.floor(Math.random() * 6) + 1;
-                                    
-                                    results.push(number); // Zahl speichern
+                                    function rollDice()  {                                                                        //Funtion definieren
+                                    let results = [];                                                                             // Lasst ein leeres Array für die Ergebnisse erstellen
 
-                                    document.getElementById(`dice${i}`).textContent = "Du hast eine " + number + " gewürfelt!";
+
+                                    { for (let i = 1; i <= 3; i++)                                                                  //Lass drei mal würfeln (i=1,2,3)
+
+
+                                    {
+                                        
+                                    let number = Math.floor(Math.random() * 6) + 1;                                                         //Zahl generieren, gerundet (1-6)
+                                    
+                                    results.push(number);                                                                            // Ergebnis soll in Array gespeichert werden
+
+
+                                    document.getElementById(`dice${i}`).textContent = "Du hast eine " + number + " gewürfelt!";    // Zahlen werden in Text ausgegeben bei Dice1, Dice2 und Dice3
+                                    
+
+                                    document.getElementById(`diceimg${i}`).src = dicesymbols [number -1 ];                                // Bild aktualisieren (Index um 1 reduzieren)
                                     }
-                                    console.log("Ergebnisse dieses Wurfs:", results);
+
+
+                                    console.log("Ergebnisse dieses Wurfs:", results);                                                   //Hier werden die Ergebnisse in der Konsole ausgegeben (nur zur Überprüfung)
                                 
 
                                 /*Prüfen, ob alle drei Würfel eine 6 zeigen*/
