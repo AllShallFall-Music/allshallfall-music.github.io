@@ -5,7 +5,7 @@
             <meta charset="UTF8">
             <title>Würfel AllShallFall First official site. Music an more! DICE GAME</title>
          </head>
-<!--      Style     -->
+                                                <!-- ------------------------     Style  -----------------------------------------------   -->
         <style>
                     body {
                         display: block;
@@ -18,7 +18,7 @@
                         text-align: center;
                         color: white;}
                         
-                    
+                
 
                         /*Würfelbutton*/
 
@@ -34,7 +34,7 @@
                         }
 
                         button:hover {
-                            background: #45a049;
+                            background: #4a834d;
                         }
 
                         #result {
@@ -42,21 +42,39 @@
                             text-align: center;
                         }
 
-                        h1 
-                        {
+                        
+                        p {
                             color: white;
                             text-align: center;
-                            font-size: 3em;
-                            margin-top: 20px;
+                            font-size: 1.5em;
                         }
+                        .message {
+                            min-height: 1.6em;
+                        }
+                        
 
 
-                        h2 
-                        {
+                        h1 {
+                            color: white;
+                            text-align: center;
+                            margin-top: 100px;
+                            font-size: 4em;
+                            margin-top: 20px;
+                        }   
+                        
+
+
+                        h2 {
                             color: white;
                             text-align: center;
                             font-size: 2em;
                             margin-top: 20px;
+                            margin-bottom: 100px;
+                        }
+
+                        h3 {
+                            display: inline;
+                            font-size: 4em;
                         }
                     
         </style>
@@ -66,7 +84,10 @@
 
         <body>
 
-                                                                        <h1>🎲 Würfel Simulator</h1> <!----Überschrift------>
+                    <h1>🎲Würfel Simulator</h1>
+                    <h2>Hier kannst du virtuell würfeln. Viel Spaß!</h2>
+
+
             <div>
                  <img src="Würfelseiten/Dice1.png" width="100" alt="Würfel 1">
                  <img src="Würfelseiten/Dice2.png" width="100" alt="Würfel 2">
@@ -88,17 +109,20 @@
             </div> 
                 
                                                                                                 
-
             <h2>Klicke auf Würfeln</h2>
+
+            <p id="message" class="message"></p>            <!-- Gibt Satz aus.-->
 
             <div>
                 <h3 id="dice1">🎲</h3>
                 <h3 id="dice2">🎲</h3>
                 <h3 id="dice3">🎲</h3>
+            </div>
 
-                <img id="diceimg1"   alt="Würfel 1"        width="100">
-                <img id="diceimg2"   alt="Würfel 2"        width="100">
-                <img id="diceimg3"   alt="Würfel 3"        width="100">    
+            <div>
+                <img id="diceimg1" src="Würfelseiten/Dice1.png"     alt="Würfel 1"        width="100">
+                <img id="diceimg2" src="Würfelseiten/Dice1.png"     alt="Würfel 2"        width="100">
+                <img id="diceimg3" src="Würfelseiten/Dice1.png"     alt="Würfel 3"        width="100">    
 
             </div>
             
@@ -143,11 +167,14 @@
                                     results.push(number);                                                                            // Ergebnis soll in Array gespeichert werden
 
 
-                                    document.getElementById(`dice${i}`).textContent = "Du hast eine " + number + " gewürfelt!";    // Zahlen werden in Text ausgegeben bei Dice1, Dice2 und Dice3
+                                    document.getElementById(`dice${i}`).textContent =  number ;    // Zahlen werden in Text ausgegeben bei Dice1, Dice2 und Dice3
                                     
 
-                                    document.getElementById(`diceimg${i}`).src = dicesymbols [number -1 ];                                // Bild aktualisieren (Index um 1 reduzieren)
+                                    document.getElementById(`diceimg${i}`).src = dicesymbols [number -1 ];  
+                                    
+                                    document.getElementById("message").textContent = "Du hast gewürfelt "; 
                                     }
+
 
 
                                     console.log("Ergebnisse dieses Wurfs:", results);                                                   //Hier werden die Ergebnisse in der Konsole ausgegeben (nur zur Überprüfung)
@@ -157,6 +184,8 @@
                                            /* if (results[0] === results[1] && results[1] === results[2])*/ 
                                              if (results.every(num => num === 6))
                                                                                             // Animation anzeigen
+
+                                                                                    
                                                                                            { const anim = document.getElementById("FreshMeat");
                                                                                             anim.style.display = "block";
 

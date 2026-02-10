@@ -45,11 +45,13 @@ body {
                         p1 {
                             font-size: 1.2em;
                             color: tomato;
-                    }
+                        }
 
                         p2 {
                             color: rgb(235, 235, 167);
                             font-size: 15px;
+                            
+                            display: inline-block;
                         }
                         /* P5 für Datum*/
                         p5 { display: block;
@@ -68,7 +70,20 @@ body {
                             font-size:30px ;
                             color: beige;
                             margin: 10px;
-                        }    
+                        }  
+                        
+                        .pagination {
+                            margin: 10px
+                        }   
+                        .pagination-link {
+                                color: limegreen;
+                                
+                        }
+                        .BLOGLINK {
+                            color: lightblue;
+                            font-size: 70px;
+                            font-family: 'Arial Black', Arial, Helvetica, sans-serif;
+                        }
                         /* Blogbereich*/
 
                         .Hauptbereich {
@@ -86,6 +101,7 @@ body {
                                                 border-color: aqua;
                                                 border-radius: 30px;
                                                 margin: 20px;
+                                                padding: 20px;
 
                                             }
                                             .Postcontainer {

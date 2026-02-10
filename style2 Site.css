@@ -46,6 +46,18 @@ header {
             border-style: inherit;
 
         }
+        p1 {
+            font-size: 1.2em;
+            color: tomato;
+        }
+
+        
+
+        .BLOGLINK {
+                            color: lightblue;
+                            font-size: 70px;
+                            font-family: 'Arial Black', Arial, Helvetica, sans-serif;
+                        }
 
         
         
