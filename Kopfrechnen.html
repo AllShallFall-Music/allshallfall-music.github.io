@@ -2,9 +2,207 @@
     <html lang="de">
          <head>
             <meta charset="UTF8">
-            <title>AllShallFall First official site. Music an more!</title>
-            <link rel="stylesheet" href="style.css">
+            <title>Kopfrechnen</title>
+            
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="icon" type="image/jpg"  href="Favicon_Nr.2.jpg">
          </head>
  <!---------------------------------Bis hier sind Metadaten------------------------------------------------------------------------>
+
+ <style>
+   Body {
+            background-color: black;
+            font-family: Arial, sans-serif;
+      }
+      h1 {
+            font-size: 36px;
+            margin-top: 50px;
+      }
+      h1,h2 {
+         
+            color: white;
+            text-align: center;
+               
+      }
+      h3 {
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+      }
+      
+     form {
+
+            display: flex;
+            margin: 0;
+      }
+      div {
+            display: flex;
+            flex-direction: column;
+      }
+      section  {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+       
+      }
+      .Aufgabe {
+         display: flex;
+         color: white;
+         margin-right: 5px;
+
+        
+      }
+      .Gleichung {
+            display: flex;
+            
+            
+
+      }
+      input {
+            display: flex;
+            margin: 20px auto;
+            padding: 10px;
+            font-size: 16px;
+            width: 100px;
+            text-align: center;
+            
+      }
+      button {
+            display: flex;
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+      }
+   
+            
+      
+
+
+      /* Chrome, Edge, Safari SPin Button entfernen*/
+
+                  input[type="number"]::-webkit-outer-spin-button,
+                  input[type="number"]::-webkit-inner-spin-button {
+                  -webkit-appearance: none;
+                  margin: 0;
+                  }
+
+           .Aufgabencontainer {
+                  display: flex;
+                 
+                  align-items: center; 
+                  justify-content: center;         
+                  background-color: #333;
+                  padding: 20px;
+                  border-radius: 10px;
+                  width: 70vw;
+                  margin: 50px auto;
+
+            }
+            #ueberpruefung {
+                  min-height: 24px;
+            }
+                     /*FOOTER AB HIER ------------------------------------------>*/
+            footer {
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+
+               ;
+            }
+
+            a {
+               display: flex;
+            }
+
+
+</style>
+
+            <!-------------------------HTML---ab------hier--------------------------------->
+
+<body>
+         <h1>Kopfrechnen</h1>
+         <div class="Aufgabencontainer">
+               
+               <section class="Gleichung">
+
+                     <h2 id="Aufgabe" class="Aufgabe">Test</h2>
+
+                        <form onsubmit="pruefen(); return false;">
+                           <input type="number" id="userAntwort" placeholder="0">
+                        </form>
+
+                                       <button onclick="pruefen()">Prüfen</button>
+
+                                                      
+
+               </section>
+
+               <section class="FEEDBACK">
+                        <p id="ueberpruefung">&nbsp;</p>
+               </section>
+         </div>
+</body>
+
+<footer>
+         <h3>Machts Spass? Bock auf mehr Funktionen? Nehme gerne Ideen an.</h3>
+         <a href="index.html" class="external-Links" target="_blank" >Home</a>
+         <p style="color: white; text-align: center;">© 2026 by MrMorti. All rights reserved.</p>
+</footer>
+
+
+            <!--------------------------------------------Java ab hier--------------------------------------------------->
+
+<script>
+
+         let zahl1, zahl2, loesung;                      //Variablen für die Zahlen und die Lösung der Aufgabe.
+
+
+   function neueAufgabe() {
+      zahl1 = Math.floor(Math.random() * 100) + 1;           //floor bedeutet, dass die Zahl abgerundet wird, damit es eine ganze Zahl ist. Math.random() * 100 generiert eine Zahl zwischen 0 und 99.
+      zahl2 = Math.floor(Math.random() * 100) + 1;           //+1 damit die Zahl zwischen 1 und 100 liegt.
+      loesung = zahl1 + zahl2;
+      
+        document.getElementById("Aufgabe").textContent = `${zahl1} + ${zahl2} = `; 
+
+        document.getElementById("userAntwort").value = ""; 
+        document.getElementById("ueberpruefung").textContent = "";
+        document.getElementById("userAntwort").focus();
+   }
+
+
+   function pruefen() 
+         {
+               const usereingabe = Number(document.getElementById("userAntwort").value);     //usereingabe wird in eine Zahl umgewandelt, damit sie mit der Lösung verglichen werden kann.
+               const Feedback = document.getElementById("ueberpruefung");
+
+               
+         
+               if (usereingabe === loesung) {
+
+                  Feedback.textContent ="✅ Richtig! Gut gemacht!";
+                  Feedback.style.color = "green";
+                  setTimeout(() => {
+                        neueAufgabe();
+                     }, 3000); //Nach 3 Sekunden wird eine neue Aufgabe generiert.
+                        
+                     
+                  }
+
+               
+
+               else {
+                  Feedback.textContent = `❌Leider Falsch. Die richtige Antwort ist ${loesung}. Neuer Versuch!`;
+                  Feedback.style.color = "red";
+                  setTimeout(() => {
+                        neueAufgabe();
+                     }, 3000); //Nach 3 Sekunden wird eine neue Aufgabe generiert.
+         }
+
+        
+
+         }
+               neueAufgabe();
+
+
+</script>
