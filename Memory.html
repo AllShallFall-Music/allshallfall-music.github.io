@@ -1,0 +1,367 @@
+<Doctype html>
+    <html lang="de">
+         <head>
+            <meta charset="UTF8">
+            <title>AllShallFall First official site. Music an more!</title>
+            
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="icon" type="image/jpg"  href="Bilder/Favicon_Nr.2.jpg">
+         </head>
+<!----------------------Style -------------------CSS-->
+<style>
+
+    html {
+        background-color: rgb(192, 20, 20);
+        padding: 10px ;
+    }
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px;
+        
+    }
+
+    .Überschrift {
+        background-color: rgba(165, 42, 114, 0.281);
+        text-align:center;
+        align-items:center;
+        justify-content: center;
+        max-width: fit-content;
+
+        padding: 20px;
+        border-radius: 10px;
+        border-style:double;
+        border-color: yellow;
+        box-shadow: 0 0 10px #00ffff
+        
+    }
+            body {
+                max-width: 100vw;
+                background-color: black;
+                color: white;
+                font-family: Arial, sans-serif;
+
+                display:block;
+                align-items: center;
+                justify-content: center;                                
+            }
+
+            
+            .Spielfeld {
+                
+               margin-top: 20px;
+
+                padding: 5px;
+                border-style: dashed;
+                border-color: rgb(41, 146, 146);
+                border-width: 5px;
+            }
+                    @media (max-width: 800px) {
+                        .Spielfeld {
+                                max-width: 90vw;
+                        
+                    }}
+            button {
+                display: block;
+                margin: 5px auto;
+                padding: 10px 20px;
+                font-size: 18px;
+                background-color: rgb(21, 107, 42);
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }     
+            .Karten {
+                background-color: rgba(165, 42, 114, 0.281);
+                
+
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: repeat(3, 1fr);
+                margin: 30px;
+
+                padding: 30px;
+
+                border-style: double;
+                border-color: green;
+                border-radius: 20px
+
+            }  
+                    @media (max-width: 800px) {
+                        .Karten {
+                                max-width: 95%;
+                        
+                    }}
+
+            img {  
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                
+                border-radius: 10px;
+                object-fit: fill;
+                                             
+            }
+            .card-back {
+                background-image: url("Bilder/Favicon_Nr.2.jpg");
+                width: 100%;
+                height: 100%;
+                position:absolute;  
+                border-radius: 10px;
+                
+                object-fit: cover;
+                
+                cursor: pointer;
+            }
+
+            .drehbox {
+                position:relative;
+                width: 320px;
+                height: 320px;
+
+                margin: 10px;
+                border-style: double;
+                border-color: yellow;
+                border-radius: 10px; 
+                
+                
+                
+            }  
+                    @media (max-width: 800px) {
+                        .drehbox {
+                                display: none;
+                        
+                    }}         
+            
+</style>
+
+<!-------------------------- HTML---------------------->
+
+<Header>  
+    <div class="Überschrift">
+            <h1>AllShallFall Memory</h1>
+            <p>Click on the cards to find the pairs. Try to remember where the cards are and find all pairs to win the game! Good luck! Only PC atm</p>
+    </div>
+
+</Header>
+
+<body>
+    <div class="Spielfeld">
+
+            <button id="startBtn">Start</button>  <!--Start Button-->
+
+                <div class="karten">
+
+                    <div class="drehbox"> 
+                        
+                        <div class="card-back"></div>
+                        <div class=" card-front">            <!--Vorder und Rückseite.Reihenfolge beachten. Durch realtive und absolute schiebt sich back vor front-->
+                                    <img src="MemoryBilder/Memory-ASF-Line.png">
+                                </div>
+
+                                
+                        </div>   
+                        <div class="drehbox">
+                            
+                            <div class="card-back"></div>
+                            <div class=" card-front">            <!--Vorder und Rückseite.Reihenfolge beachten. Durch realtive und absolute schiebt sich back vor front-->
+                                    <img src="MemoryBilder/Memory-ASF-Line.png">
+                                </div>
+
+                               
+                        </div> 
+                        <div class="drehbox">
+                            
+                            <div class="card-back"></div>
+                            <div class=" card-front">            <!--Vorder und Rückseite.Reihenfolge beachten. Durch realtive und absolute schiebt sich back vor front-->
+                                    <img src="MemoryBilder/Memory-ASF-Logo.png">
+                                </div>
+
+                            </div> 
+                        <div class="drehbox">
+
+                            <div class="card-back"></div>
+                                <div class=" card-front">            <!--Vorder und Rückseite.Reihenfolge beachten. Durch realtive und absolute schiebt sich back vor front-->
+                                    <img src="MemoryBilder/Memory-ASF-Logo.png">
+                                </div>
+
+                        </div> 
+                        <div class="drehbox">
+
+                            <div class="card-back"></div>
+                                <div class=" card-front">            <!--Vorder und Rückseite.Reihenfolge beachten. Durch realtive und absolute schiebt sich back vor front-->
+                                    <img src="MemoryBilder/Memory-Morti02.png">
+                                </div>
+
+                        </div> 
+                        <div class="drehbox">
+
+                            <div class="card-back"></div>
+                                <div class=" card-front">            <!--Vorder und Rückseite.Reihenfolge beachten. Durch realtive und absolute schiebt sich back vor front-->
+                                    <img src="MemoryBilder/Memory-Morti02.png">
+                                </div>
+
+                        </div> 
+                        <div class="drehbox">
+
+                            <div class="card-back"></div>
+                                <div class=" card-front">            <!--Vorder und Rückseite.Reihenfolge beachten. Durch realtive und absolute schiebt sich back vor front-->
+                                    <img src="MemoryBilder/Memory-Penta.png">
+                                </div>
+
+                        </div> 
+                        <div class="drehbox">
+
+                            <div class="card-back"></div>
+                                <div class=" card-front">            <!--Vorder und Rückseite.Reihenfolge beachten. Durch realtive und absolute schiebt sich back vor front-->
+                                    <img src="MemoryBilder/Memory-Penta.png">
+                                </div>
+
+                        </div> 
+                        <div class="drehbox">
+
+                            <div class="card-back"></div>
+                                <div class=" card-front">            <!--Vorder und Rückseite.Reihenfolge beachten. Durch realtive und absolute schiebt sich back vor front-->
+                                    <img src="MemoryBilder/Memory-Star.png">
+                                </div>
+
+                        </div> 
+                        <div class="drehbox">
+
+                            <div class="card-back"></div>
+                                <div class=" card-front">            <!--Vorder und Rückseite.Reihenfolge beachten. Durch realtive und absolute schiebt sich back vor front-->
+                                    <img src="MemoryBilder/Memory-Star.png">
+                                </div>
+
+                        </div> 
+                        <div class="drehbox">
+
+                            <div class="card-back"></div>
+                                <div class=" card-front">            <!--Vorder und Rückseite.Reihenfolge beachten. Durch realtive und absolute schiebt sich back vor front-->
+                                    <img src="MemoryBilder/Memory-Morti.png">
+                                </div>
+
+                        </div> 
+                        <div class="drehbox">
+
+                            <div class="card-back"></div>
+                                <div class=" card-front">            <!--Vorder und Rückseite.Reihenfolge beachten. Durch realtive und absolute schiebt sich back vor front-->
+                                    <img src="MemoryBilder/Memory-Morti.png">
+                                </div>
+
+                        </div> 
+                    
+
+                </div>
+    </div>   
+    <!--
+        <div class="Spielfeld">
+            <div class="Karten">
+                <img src="MemoryBilder/Memory-ASF-Line.png"     alt="Bild1" class="Karte">
+                <img src="MemoryBilder/Memory-ASF-Logo.png"     alt="Bild2" class="Karte">
+                <img src="MemoryBilder/Memory-Morti.png"        alt="Bild3" class="Karte">
+                <img src="MemoryBilder/Memory-Morti02.png"      alt="Bild4" class="Karte">
+                <img src="MemoryBilder/Memory-Star.png"         alt="Bild5" class="Karte">
+                <img src="MemoryBilder/Memory-Penta.png"        alt="Bild6" class="Karte">
+                <img src="MemoryBilder/Memory-ASF-Line.png"     alt="Bild1" class="Karte">
+                <img src="MemoryBilder/Memory-ASF-Logo.png"     alt="Bild2" class="Karte">
+                <img src="MemoryBilder/Memory-Morti.png"        alt="Bild3" class="Karte">
+                <img src="MemoryBilder/Memory-Morti02.png"      alt="Bild4" class="Karte">
+                <img src="MemoryBilder/Memory-Star.png"         alt="Bild5" class="Karte">
+                <img src="MemoryBilder/Memory-Penta.png"        alt="Bild6" class="Karte">
+                
+
+            </div>
+    </div>
+    -->
+
+</body>
+<!----------------------------------------------------Java-------------------------------------------->
+
+<script>
+
+        const startBtn = document.getElementById('startBtn');
+        const back = document.querySelectorAll('.card-back');   /* Rückseite der Karte. Es wird ein Array erstellt, da es mehrere Karten gibt. Alle Elemente mit der Klasse "card-back" werden ausgewählt. */
+        const front = document.querySelectorAll('.card-front'); /*Bildseite der Karte*/
+        const reset = document.getElementById('resetBtn');
+
+        const container = document.querySelector('.karten');    /*Erstellt einen Array aus den Kindern des Containers. Das sind die Karten, die gemischt werden sollen.*/
+        const mixedcards = Array.from(container.children);
+
+        const aufdecken = document.querySelectorAll('.drehbox');   
+
+                function shuffle(array) {                               /*1.Funktion definieren. Karten werden gemischt */
+
+                        for (let i = array.length - 1; i > 0; i--) {
+
+                        const j = Math.floor(Math.random() * (i + 1));
+                        [array[i], array[j]] = [array[j], array[i]];
+
+                        }
+                }
+
+                        startBtn.addEventListener('click', () => {
+                            shuffle(mixedcards);                                                     /* 2.Funktion aufrufen, damit die Karten gemischt werden. Es wird der Array übergeben, der die Karten enthält. */
+                                mixedcards.forEach(drehboX => {
+                                    container.appendChild(drehboX);                                 /* 3.Karten werden in der neuen Reihenfolge dem Container hinzugefügt. Dadurch werden sie auf der Seite in der neuen Reihenfolge angezeigt. */
+                                front.forEach(frontappear => frontappear.style.display = "none");   /* 4. Alle Karten werden sichtbar gemacht*/
+                                
+                                }
+                                                  );
+                        }
+                                                 )
+        let erstekarte = null;   /* Variable, um die erste aufgedeckte Karte zu speichern. Anfangs ist sie null, da noch keine Karte aufgedeckt wurde. */
+        let zweitekarte = null;
+        let sperre = false;        /* Variable, um zu verhindern, dass während des Vergleichs weitere Karten aufgedeckt werden können. Anfangs ist sie false, da keine Karten verglichen werden. */
+
+
+                                aufdecken.forEach(karte => {
+                                        karte.addEventListener('click', () => {
+
+                                            if(sperre) return;  /* Wenn sperre true ist, wird die Funktion verlassen und es können keine weiteren Karten aufgedeckt werden. */
+
+                                            const frontseite = karte.querySelector('.card-front');
+                                            frontseite.style.display = "block";
+
+                                            if(!erstekarte) {
+                                                erstekarte = karte;  /* Wenn erstekarte null ist, wird die aktuelle Karte als erstekarte gespeichert. */
+                                                return;
+                                            }
+
+                                            zweitekarte = karte;
+                                            sperre = true;
+
+                                            vergleichen();
+                                });
+                            });
+
+                        function vergleichen() {
+
+                            const bild1 = erstekarte.querySelector('img').src;  /* Es wird die Bildquelle der ersten Karte ausgelesen und in bild1 gespeichert. */
+                            const bild2 = zweitekarte.querySelector('img').src;  /* Es wird die Bildquelle der zweiten Karte ausgelesen und in bild2 gespeichert. */
+
+                                if(bild1 === bild2) {
+
+                                    erstekarte = null;   /* Wenn die Bilder gleich sind, werden die Variablen zurückgesetzt, damit der Spieler die nächsten Karten aufdecken kann. */
+                                    zweitekarte = null;
+                                    sperre = false;
+                                }
+
+                                else {
+                                        setTimeout(() => {
+
+                                        erstekarte.querySelector('.card-front').style.display = "none";
+                                        zweitekarte.querySelector('.card-front').style.display = "none";
+
+                                        erstekarte = null;
+                                        zweitekarte = null;
+                                        sperre = false;
+                                        }, 1000); /* Wenn die Bilder nicht gleich sind, werden die Karten nach einer kurzen Verzögerung wieder umgedreht. Die Variablen werden zurückgesetzt, damit der Spieler die nächsten Karten aufdecken kann. */
+                                }
+                        }
+
+</script>   
+
