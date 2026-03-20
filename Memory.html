@@ -277,8 +277,8 @@ body {
 
                         startBtn.addEventListener('click', () => {
                             shuffle(mixedcards);                                                     /* 2.Funktion aufrufen, damit die Karten gemischt werden. Es wird der Array übergeben, der die Karten enthält. */
-                                mixedcards.forEach(drehboX => {
-                                    container.appendChild(drehboX);                                 /* 3.Karten werden in der neuen Reihenfolge dem Container hinzugefügt. Dadurch werden sie auf der Seite in der neuen Reihenfolge angezeigt. */
+                                mixedcards.forEach(drehbox => {
+                                    container.appendChild(drehbox);                                 /* 3.Karten werden in der neuen Reihenfolge dem Container hinzugefügt. Dadurch werden sie auf der Seite in der neuen Reihenfolge angezeigt. */
                                 front.forEach(frontappear => frontappear.style.display = "none");   /* 4. Alle Karten werden sichtbar gemacht*/
                                 
                                 }
