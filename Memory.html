@@ -1,284 +1,256 @@
-<Doctype html>
+<!DOCTYPE html>
     <html lang="de">
          <head>
-            <meta charset="UTF8">
-            <title>AllShallFall First official site. Music an more!</title>
+            <meta charset="UTF-8">
+            <title>AllShallFall MEMORY First official site. Music an more! </title>
             
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="icon" type="image/jpg"  href="Bilder/Favicon_Nr.2.jpg">
          </head>
+
+
+   
+
+        <body>
+            <Header>  
+                <div class="Überschrift">
+                                <h1>AllShallFall Memory</h1>
+                                <p>Click on the cards to find the pairs. Try to remember where the cards are and find all pairs to win the game! Good luck! Only PC atm</p>
+                </div>
+            </Header>
+
+                        <div class="Spielfeld">
+
+                                <button id="startBtn">Start</button>  <!--Start Button-->
+
+                                    <div class="karten">
+
+                                        <div class="drehbox"> 
+                                            
+                                            <div class="card-back"></div>
+                                            <div class=" card-front">            <!--Vorder und Rückseite.Reihenfolge beachten. Durch realtive und absolute schiebt sich back vor front-->
+                                                        <img src="MemoryBilder/Memory-ASF-Line.png">
+                                            </div>                                                  
+                                        </div>  
+
+                                        <div class="drehbox">
+                                                
+                                            <div class="card-back"></div>
+                                            <div class=" card-front">            <!--Vorder und Rückseite.Reihenfolge beachten. Durch realtive und absolute schiebt sich back vor front-->
+                                                        <img src="MemoryBilder/Memory-ASF-Line.png">
+                                            </div>
+                                        </div>                                               
+                                             
+                                        <div class="drehbox">
+                                                
+                                            <div class="card-back"></div>
+                                            <div class=" card-front">            <!--Vorder und Rückseite.Reihenfolge beachten. Durch realtive und absolute schiebt sich back vor front-->
+                                                        <img src="MemoryBilder/Memory-ASF-Logo.png">
+                                            </div>
+                                        </div> 
+
+                                        <div class="drehbox">
+
+                                            <div class="card-back"></div>
+                                            <div class=" card-front">            <!--Vorder und Rückseite.Reihenfolge beachten. Durch realtive und absolute schiebt sich back vor front-->
+                                                        <img src="MemoryBilder/Memory-ASF-Logo.png">
+                                            </div>
+
+                                        </div> 
+
+                                        <div class="drehbox">
+
+                                            <div class="card-back"></div>
+                                            <div class=" card-front">            <!--Vorder und Rückseite.Reihenfolge beachten. Durch realtive und absolute schiebt sich back vor front-->
+                                                        <img src="MemoryBilder/Memory-Morti02.png">
+                                            </div>
+                                        </div> 
+
+                                        <div class="drehbox">
+
+                                            <div class="card-back"></div>
+                                            <div class=" card-front">            <!--Vorder und Rückseite.Reihenfolge beachten. Durch realtive und absolute schiebt sich back vor front-->
+                                                        <img src="MemoryBilder/Memory-Morti02.png">
+                                            </div>
+
+                                        </div> 
+
+                                        <div class="drehbox">
+
+                                                <div class="card-back"></div>
+                                                    <div class=" card-front">            <!--Vorder und Rückseite.Reihenfolge beachten. Durch realtive und absolute schiebt sich back vor front-->
+                                                        <img src="MemoryBilder/Memory-Penta.png">
+                                                    </div>
+
+                                        </div> 
+
+                                        <div class="drehbox">
+
+                                            <div class="card-back"></div>
+                                            <div class=" card-front">            <!--Vorder und Rückseite.Reihenfolge beachten. Durch realtive und absolute schiebt sich back vor front-->
+                                                        <img src="MemoryBilder/Memory-Penta.png">
+                                            </div>
+
+                                        </div> 
+
+                                        <div class="drehbox">
+
+                                            <div class="card-back"></div>
+                                            <div class=" card-front">            <!--Vorder und Rückseite.Reihenfolge beachten. Durch realtive und absolute schiebt sich back vor front-->
+                                                        <img src="MemoryBilder/Memory-Star.png">
+                                            </div>
+
+                                        </div> 
+
+                                        <div class="drehbox">
+
+                                            <div class="card-back"></div>
+                                            <div class=" card-front">            <!--Vorder und Rückseite.Reihenfolge beachten. Durch realtive und absolute schiebt sich back vor front-->
+                                                        <img src="MemoryBilder/Memory-Star.png">
+                                            </div>
+
+                                        </div> 
+
+                                        <div class="drehbox">
+
+                                            <div class="card-back"></div>
+                                             <div class=" card-front">            <!--Vorder und Rückseite.Reihenfolge beachten. Durch realtive und absolute schiebt sich back vor front-->
+                                                        <img src="MemoryBilder/Memory-Morti.png">
+                                            </div>
+
+                                        </div> 
+                                        
+                                        <div class="drehbox">
+
+                                        <div class="card-back"></div>
+                                            <div class=" card-front">            <!--Vorder und Rückseite.Reihenfolge beachten. Durch realtive und absolute schiebt sich back vor front-->
+                                                        <img src="MemoryBilder/Memory-Morti.png">
+                                            </div>
+                                        </div> 
+                                        
+
+                                    </div>
+                        </div>   
+
+        </body>
+</html>
+
 <!----------------------Style -------------------CSS-->
 <style>
+body {
+            max-width: 100vw;
+                
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+                
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;                                
+}
 
-    html {
-        background-color: rgb(192, 20, 20);
-        padding: 10px ;
-    }
-    header {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        padding: 20px;
-        
-    }
+        header {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
 
-    .Überschrift {
-        background-color: rgba(165, 42, 114, 0.281);
-        text-align:center;
-        align-items:center;
-        justify-content: center;
-        max-width: fit-content;
+            padding: 20px;          
+        }
 
-        padding: 20px;
-        border-radius: 10px;
-        border-style:double;
-        border-color: yellow;
-        box-shadow: 0 0 10px #00ffff
-        
-    }
-            body {
-                max-width: 100vw;
-                background-color: black;
-                color: white;
-                font-family: Arial, sans-serif;
+        .Überschrift {
+            max-width: fit-content;
+            background-color: rgba(165, 42, 114, 0.281);
+            text-align:center;
+            align-items:center;
+            justify-content: center;
+            
 
-                display:block;
-                align-items: center;
-                justify-content: center;                                
-            }
+            padding: 20px;
+            border-radius: 10px;
+            border-style:double;
+            border-color: yellow;
+            box-shadow: 0 0 10px #00ffff            
+        }
+                    
+                    .Spielfeld {
+                        
+                        margin-top: 20px;                
+                        border-style: dashed;
+                        border-color: rgb(41, 146, 146);
+                        border-width: 5px;
+                    }                                                          
+                            
+                            button {              
+                                display: block;
+                                background-color: rgb(21, 107, 42);
+                                font-size: 25px;
+                                color: white;
+
+                                margin: 5px auto;
+                                padding: 10px 20px;              
+                                border: none;
+                                border-radius: 5px;
+                                
+                                cursor: pointer;
+                            }     
+                            .karten {
+                                display: grid;
+                                grid-template-columns: repeat(4, 150px);
+                                grid-template-rows: repeat(3, 150px);
+                                background-color: rgba(165, 42, 114, 0.281);
+                                gap:20px;
+                                margin:0;
+                                padding:20px;
+
+                                border-style: double;
+                                border-color: green;
+                                border-radius: 10px;              
+                            }  
+                  
+                                        .drehbox {
+                                                position: relative;                                  
+                                        } 
+                                            img {  
+                                                
+                                                position: absolute;
+                                                width: 100%;
+                                                height: 100%;
+                                                border-radius: 10px;
+                                                object-fit: cover;
+                                                
+                                                                            
+                                            }
+                                            .card-back {
+                                                
+                                                background-image: url("Memorybilder/Rückseite.png");
+                                                width: 100%;
+                                                height: 100%;
+                                                position:absolute;  
+                                                border-radius: 10px;
+                                                
+                                                object-fit: cover;           
+                                                cursor: pointer;
+                                            }
 
             
-            .Spielfeld {
-                
-               margin-top: 20px;
-
-                padding: 5px;
-                border-style: dashed;
-                border-color: rgb(41, 146, 146);
-                border-width: 5px;
-            }
                     @media (max-width: 800px) {
-                        .Spielfeld {
-                                max-width: 90vw;
+
+                        .karten {
+                                grid-template-columns: repeat(4, 70px);
+                                grid-template-rows: repeat(3, 70px);
+                                gap:10px;
+                                padding:10px;
+                        }  
                         
-                    }}
-            button {
-                display: block;
-                margin: 5px auto;
-                padding: 10px 20px;
-                font-size: 18px;
-                background-color: rgb(21, 107, 42);
-                color: white;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-            }     
-            .Karten {
-                background-color: rgba(165, 42, 114, 0.281);
-                
-
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                grid-template-rows: repeat(3, 1fr);
-                margin: 30px;
-
-                padding: 30px;
-
-                border-style: double;
-                border-color: green;
-                border-radius: 20px
-
-            }  
-                    @media (max-width: 800px) {
-                        .Karten {
-                                max-width: 95%;
-                        
-                    }}
-
-            img {  
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                
-                border-radius: 10px;
-                object-fit: fill;
-                                             
-            }
-            .card-back {
-                background-image: url("Bilder/Favicon_Nr.2.jpg");
-                width: 100%;
-                height: 100%;
-                position:absolute;  
-                border-radius: 10px;
-                
-                object-fit: cover;
-                
-                cursor: pointer;
-            }
-
-            .drehbox {
-                position:relative;
-                width: 320px;
-                height: 320px;
-
-                margin: 10px;
-                border-style: double;
-                border-color: yellow;
-                border-radius: 10px; 
-                
-                
-                
-            }  
-                    @media (max-width: 800px) {
-                        .drehbox {
-                                display: none;
-                        
-                    }}         
-            
+                         .Spielfeld {
+                                        max-width: 90vw;
+                        }    
+                    }
 </style>
 
-<!-------------------------- HTML---------------------->
 
-<Header>  
-    <div class="Überschrift">
-            <h1>AllShallFall Memory</h1>
-            <p>Click on the cards to find the pairs. Try to remember where the cards are and find all pairs to win the game! Good luck! Only PC atm</p>
-    </div>
-
-</Header>
-
-<body>
-    <div class="Spielfeld">
-
-            <button id="startBtn">Start</button>  <!--Start Button-->
-
-                <div class="karten">
-
-                    <div class="drehbox"> 
-                        
-                        <div class="card-back"></div>
-                        <div class=" card-front">            <!--Vorder und Rückseite.Reihenfolge beachten. Durch realtive und absolute schiebt sich back vor front-->
-                                    <img src="MemoryBilder/Memory-ASF-Line.png">
-                                </div>
-
-                                
-                        </div>   
-                        <div class="drehbox">
-                            
-                            <div class="card-back"></div>
-                            <div class=" card-front">            <!--Vorder und Rückseite.Reihenfolge beachten. Durch realtive und absolute schiebt sich back vor front-->
-                                    <img src="MemoryBilder/Memory-ASF-Line.png">
-                                </div>
-
-                               
-                        </div> 
-                        <div class="drehbox">
-                            
-                            <div class="card-back"></div>
-                            <div class=" card-front">            <!--Vorder und Rückseite.Reihenfolge beachten. Durch realtive und absolute schiebt sich back vor front-->
-                                    <img src="MemoryBilder/Memory-ASF-Logo.png">
-                                </div>
-
-                            </div> 
-                        <div class="drehbox">
-
-                            <div class="card-back"></div>
-                                <div class=" card-front">            <!--Vorder und Rückseite.Reihenfolge beachten. Durch realtive und absolute schiebt sich back vor front-->
-                                    <img src="MemoryBilder/Memory-ASF-Logo.png">
-                                </div>
-
-                        </div> 
-                        <div class="drehbox">
-
-                            <div class="card-back"></div>
-                                <div class=" card-front">            <!--Vorder und Rückseite.Reihenfolge beachten. Durch realtive und absolute schiebt sich back vor front-->
-                                    <img src="MemoryBilder/Memory-Morti02.png">
-                                </div>
-
-                        </div> 
-                        <div class="drehbox">
-
-                            <div class="card-back"></div>
-                                <div class=" card-front">            <!--Vorder und Rückseite.Reihenfolge beachten. Durch realtive und absolute schiebt sich back vor front-->
-                                    <img src="MemoryBilder/Memory-Morti02.png">
-                                </div>
-
-                        </div> 
-                        <div class="drehbox">
-
-                            <div class="card-back"></div>
-                                <div class=" card-front">            <!--Vorder und Rückseite.Reihenfolge beachten. Durch realtive und absolute schiebt sich back vor front-->
-                                    <img src="MemoryBilder/Memory-Penta.png">
-                                </div>
-
-                        </div> 
-                        <div class="drehbox">
-
-                            <div class="card-back"></div>
-                                <div class=" card-front">            <!--Vorder und Rückseite.Reihenfolge beachten. Durch realtive und absolute schiebt sich back vor front-->
-                                    <img src="MemoryBilder/Memory-Penta.png">
-                                </div>
-
-                        </div> 
-                        <div class="drehbox">
-
-                            <div class="card-back"></div>
-                                <div class=" card-front">            <!--Vorder und Rückseite.Reihenfolge beachten. Durch realtive und absolute schiebt sich back vor front-->
-                                    <img src="MemoryBilder/Memory-Star.png">
-                                </div>
-
-                        </div> 
-                        <div class="drehbox">
-
-                            <div class="card-back"></div>
-                                <div class=" card-front">            <!--Vorder und Rückseite.Reihenfolge beachten. Durch realtive und absolute schiebt sich back vor front-->
-                                    <img src="MemoryBilder/Memory-Star.png">
-                                </div>
-
-                        </div> 
-                        <div class="drehbox">
-
-                            <div class="card-back"></div>
-                                <div class=" card-front">            <!--Vorder und Rückseite.Reihenfolge beachten. Durch realtive und absolute schiebt sich back vor front-->
-                                    <img src="MemoryBilder/Memory-Morti.png">
-                                </div>
-
-                        </div> 
-                        <div class="drehbox">
-
-                            <div class="card-back"></div>
-                                <div class=" card-front">            <!--Vorder und Rückseite.Reihenfolge beachten. Durch realtive und absolute schiebt sich back vor front-->
-                                    <img src="MemoryBilder/Memory-Morti.png">
-                                </div>
-
-                        </div> 
-                    
-
-                </div>
-    </div>   
-    <!--
-        <div class="Spielfeld">
-            <div class="Karten">
-                <img src="MemoryBilder/Memory-ASF-Line.png"     alt="Bild1" class="Karte">
-                <img src="MemoryBilder/Memory-ASF-Logo.png"     alt="Bild2" class="Karte">
-                <img src="MemoryBilder/Memory-Morti.png"        alt="Bild3" class="Karte">
-                <img src="MemoryBilder/Memory-Morti02.png"      alt="Bild4" class="Karte">
-                <img src="MemoryBilder/Memory-Star.png"         alt="Bild5" class="Karte">
-                <img src="MemoryBilder/Memory-Penta.png"        alt="Bild6" class="Karte">
-                <img src="MemoryBilder/Memory-ASF-Line.png"     alt="Bild1" class="Karte">
-                <img src="MemoryBilder/Memory-ASF-Logo.png"     alt="Bild2" class="Karte">
-                <img src="MemoryBilder/Memory-Morti.png"        alt="Bild3" class="Karte">
-                <img src="MemoryBilder/Memory-Morti02.png"      alt="Bild4" class="Karte">
-                <img src="MemoryBilder/Memory-Star.png"         alt="Bild5" class="Karte">
-                <img src="MemoryBilder/Memory-Penta.png"        alt="Bild6" class="Karte">
-                
-
-            </div>
-    </div>
-    -->
-
-</body>
 <!----------------------------------------------------Java-------------------------------------------->
 
 <script>

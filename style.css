@@ -4,7 +4,7 @@ body {
     height: 100%;
     font-family: Arial, Helvetica, sans-serif;
 
-    display:flex;
+    display:block;
     justify-content: center;
     text-align: center;
 
@@ -265,7 +265,7 @@ footer {
                     }
 
 
-                    .hitcounter {
+                    .HitCounter {
                         width: 150px;
                         height: auto;
                         margin-top: 10px;

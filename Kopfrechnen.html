@@ -1,4 +1,4 @@
-<Doctype html>
+<!DOCTYPE html>
     <html lang="de">
          <head>
             <meta charset="UTF8">
@@ -8,7 +8,36 @@
             <link rel="icon" type="image/jpg"  href="Favicon_Nr.2.jpg">
          </head>
  <!---------------------------------Bis hier sind Metadaten------------------------------------------------------------------------>
+<body>
+      <h1>Kopfrechnen</h1>
 
+                  <div class="Aufgabencontainer">
+                        
+                        <section class="Gleichung">
+
+                              <h2 id="Aufgabe" class="Aufgabe">Test</h2>
+
+                                    <form onsubmit="pruefen(); return false;">
+                                    <input type="number" id="userAntwort" placeholder="0">
+                                    </form>
+
+                                                <button onclick="pruefen()">Prüfen</button>
+                        </section>
+
+                        <section class="FEEDBACK">
+                                    <p id="ueberpruefung">&nbsp;</p>
+                        </section>
+                  </div>
+
+
+      <footer>
+         <h3>Machts Spass? Bock auf mehr Funktionen? Nehme gerne Ideen an.</h3>
+         <a href="index.html" class="external-Links" target="_blank" >Home</a>
+         <p style="color: white; text-align: center;">© 2026 by MrMorti. All rights reserved.</p>
+      </footer>
+</body>
+
+<!-- ------------------           CSS     -------------------------->
  <style>
    Body {
             background-color: black;
@@ -97,7 +126,7 @@
             #ueberpruefung {
                   min-height: 24px;
             }
-                     /*FOOTER AB HIER ------------------------------------------>*/
+            
             footer {
                display: flex;
                flex-direction: column;
@@ -108,36 +137,6 @@
                display: flex;
             }
 </style>
-
-            <!-------------------------HTML---ab------hier--------------------------------->
-
-      <body>
-            <h1>Kopfrechnen</h1>
-                  <div class="Aufgabencontainer">
-                        
-                        <section class="Gleichung">
-
-                              <h2 id="Aufgabe" class="Aufgabe">Test</h2>
-
-                                    <form onsubmit="pruefen(); return false;">
-                                    <input type="number" id="userAntwort" placeholder="0">
-                                    </form>
-
-                                                <button onclick="pruefen()">Prüfen</button>
-                        </section>
-
-                        <section class="FEEDBACK">
-                                    <p id="ueberpruefung">&nbsp;</p>
-                        </section>
-                  </div>
-      </body>
-
-<footer>
-         <h3>Machts Spass? Bock auf mehr Funktionen? Nehme gerne Ideen an.</h3>
-         <a href="index.html" class="external-Links" target="_blank" >Home</a>
-         <p style="color: white; text-align: center;">© 2026 by MrMorti. All rights reserved.</p>
-</footer>
-
 
             <!--------------------------------------------Java ab hier--------------------------------------------------->
 

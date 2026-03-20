@@ -1,27 +1,95 @@
-<Doctype: html>
+<!DOCTYPE html>
     <html lang="de"
 >
          <head>
-            <meta charset="UTF8">
-            <title>Würfel AllShallFall First official site. Music an more! DICE GAME</title>
+            <meta charset="UTF-8">
+            <title>Würfelen mit AllShallFall. First official site. Music an more! DICE GAME</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
          </head>
-                                                <!-- ------------------------     Style  -----------------------------------------------   -->
+
+<body>
+
+        <h1>🎲Würfel Simulator</h1>
+        <h2>Hier kannst du virtuell würfeln. Viel Spaß!</h2>
+
+                <div class="Würfeldeko"> <!--Dekowürfel-->
+                    <img class="dice-img" src="Würfelseiten/Dice1.png" width="100" alt="Würfel 1">
+                    <img class="dice-img" src="Würfelseiten/Dice2.png" width="100" alt="Würfel 2">
+                    <img class="dice-img" src="Würfelseiten/Dice1.png" width="100" alt="Würfel 3">
+                    <img class="dice-img" src="Würfelseiten/Dice1.png" width="100" alt="Würfel 1">
+                    <img class="dice-img" src="Würfelseiten/Dice1.png" width="100" alt="Würfel 2">
+                    <img class="dice-img" src="Würfelseiten/Dice1.png" width="100" alt="Würfel 3">
+                    <img class="dice-img" src="Würfelseiten/Dice3.png" width="100" alt="Würfel 1">
+                    <img class="dice-img" src="Würfelseiten/Dice1.png" width="100" alt="Würfel 2">
+                    <img class="dice-img" src="Würfelseiten/Dice1.png" width="100" alt="Würfel 3">
+                    <img class="dice-img" src="Würfelseiten/Dice1.png" width="100" alt="Würfel 1">
+                    <img class="dice-img" src="Würfelseiten/Dice4.png" width="100" alt="Würfel 2">
+                    <img class="dice-img" src="Würfelseiten/Dice1.png" width="100" alt="Würfel 3">
+                    <img class="dice-img" src="Würfelseiten/Dice1.png" width="100" alt="Würfel 1">
+                    <img class="dice-img" src="Würfelseiten/Dice5.png" width="100" alt="Würfel 2">
+                    <img class="dice-img" src="Würfelseiten/Dice1.png" width="100" alt="Würfel 3">
+                    <img class="dice-img" src="Würfelseiten/Dice6.png" width="100" alt="Würfel 1">
+                    <img class="dice-img" src="Würfelseiten/Dice1.png" width="100" alt="Würfel 2">
+                </div> 
+                
+                                                                                                
+        <h2>Klicke auf Würfeln</h2>
+
+            <p id="message" class="message"></p>            <!-- Gibt Satz aus.-->
+
+            <div>
+                <h3 id="dice1">🎲</h3>
+                <h3 id="dice2">🎲</h3>
+                <h3 id="dice3">🎲</h3>
+            </div>
+
+            <div>
+                <img id="diceimg1" src="Würfelseiten/Dice1.png"     alt="Würfel 1"        width="100">
+                <img id="diceimg2" src="Würfelseiten/Dice1.png"     alt="Würfel 2"        width="100">
+                <img id="diceimg3" src="Würfelseiten/Dice1.png"     alt="Würfel 3"        width="100">    
+
+            </div>
+            
+
+                          <!-- Gewinn-Animation -->
+                                <div id="FreshMeat" style="display:none; text-align:center;">
+                                    <img src="Bilder/FreshMeat.gif" width="300" alt="AHHHH.FreshMEAT">
+                                </div>
+
+
+            <!--BUTTON  -->  <div><button onclick="rollDice()">Würfeln</button></div>
+
+    <footer>
+            <h4>Machts Spass? Bock auf mehr Funktionen? Nehme gerne Ideen an.</h4>
+            <a href="index.html" class="external-Links" target="_blank" >Home</a>
+            <p style="color: white; text-align: center;">© 2026 by MrMorti. All rights reserved.</p>
+    </footer>
+</body>
+
+
+
+            <!-- ------------------------   CSS  -----------------------------------------------   -->
 <style>
-        body {
-            display: block;
-            align-content: center;
-            align-items: center;
-            background-color: black;
+
+    body {
+        display: block;
+        align-content: center;
+        align-items: center;
+        background-color: black;
+    }
+                    .Würfeldeko {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        gap: 10px;
+                        margin-bottom: 30px;
                     }
                     div {
                         text-align: center;
                         color: white;}
                         
-                
 
-                        /*Würfelbutton*/
-
-                        button {
+                        button {        /*Würfelbutton*/
 
                         padding: 10px 20px;
                         font-size: 1.2em;
@@ -51,7 +119,6 @@
                             min-height: 1.6em;
                         }
                         
-
                         /* Überschriften */
                         h1 {
                             color: white;
@@ -61,107 +128,60 @@
                             margin-top: 20px;
                         }   
                         
-
-
                         h2 {
                             color: white;
                             text-align: center;
                             font-size: 2em;
                             margin-top: 20px;
-                            margin-bottom: 100px;
+                            margin-bottom: 20px;
                         }
 
                         h3 {
                             display: inline;
                             color: white;
-                            font-size: 4em;
+                            font-size: 2em;
+                        }
+                        h4 {
+                            display: flex;
+                            font-size: 1.5em;
+                            color:azure;
                         }
                         a {
                             display: flex;
                             color: white;
                             font-size: 1.5em;
                         }
+                        img {
+                            border-radius: 12px;
+                        }
 
             footer {
                display: flex;
                flex-direction: column;
                align-items: center;
+               text-align: center;
 
                
+            }
+
+            @media (max-width: 800px) {
+               .dice-img {
+                    display: none;
+               }
+               h2 {
+                    font-size: 1.5em;
+               }
+               p {
+                    font-size: 1.2em;
+               }
+
             }
                     
 </style>
 
-
-           <!-----------------------------------------  HTML UNTEN     ---------------------------------          -->
-
-<body>
-            
-
-
-                    <h1>🎲Würfel Simulator</h1>
-                    <h2>Hier kannst du virtuell würfeln. Viel Spaß!</h2>
-
-
-            <div>
-                 <img src="Würfelseiten/Dice1.png" width="100" alt="Würfel 1">
-                 <img src="Würfelseiten/Dice2.png" width="100" alt="Würfel 2">
-                 <img src="Würfelseiten/Dice1.png" width="100" alt="Würfel 3">
-                 <img src="Würfelseiten/Dice1.png" width="100" alt="Würfel 1">
-                 <img src="Würfelseiten/Dice1.png" width="100" alt="Würfel 2">
-                 <img src="Würfelseiten/Dice1.png" width="100" alt="Würfel 3">
-                 <img src="Würfelseiten/Dice3.png" width="100" alt="Würfel 1">
-                 <img src="Würfelseiten/Dice1.png" width="100" alt="Würfel 2">
-                 <img src="Würfelseiten/Dice1.png" width="100" alt="Würfel 3">
-                 <img src="Würfelseiten/Dice1.png" width="100" alt="Würfel 1">
-                 <img src="Würfelseiten/Dice4.png" width="100" alt="Würfel 2">
-                 <img src="Würfelseiten/Dice1.png" width="100" alt="Würfel 3">
-                 <img src="Würfelseiten/Dice1.png" width="100" alt="Würfel 1">
-                 <img src="Würfelseiten/Dice5.png" width="100" alt="Würfel 2">
-                 <img src="Würfelseiten/Dice1.png" width="100" alt="Würfel 3">
-                 <img src="Würfelseiten/Dice6.png" width="100" alt="Würfel 1">
-                 <img src="Würfelseiten/Dice1.png" width="100" alt="Würfel 2">
-            </div> 
-                
-                                                                                                
-            <h2>Klicke auf Würfeln</h2>
-
-            <p id="message" class="message"></p>            <!-- Gibt Satz aus.-->
-
-            <div>
-                <h3 id="dice1">🎲</h3>
-                <h3 id="dice2">🎲</h3>
-                <h3 id="dice3">🎲</h3>
-            </div>
-
-            <div>
-                <img id="diceimg1" src="Würfelseiten/Dice1.png"     alt="Würfel 1"        width="100">
-                <img id="diceimg2" src="Würfelseiten/Dice1.png"     alt="Würfel 2"        width="100">
-                <img id="diceimg3" src="Würfelseiten/Dice1.png"     alt="Würfel 3"        width="100">    
-
-            </div>
-            
-
-                          <!-- Gewinn-Animation -->
-                                <div id="FreshMeat" style="display:none; text-align:center;">
-                                    <img src="Bilder/FreshMeat.gif" width="300" alt="AHHHH.FreshMEAT">
-                                </div>
-
-
-            <!--BUTTON  -->  <div><button onclick="rollDice()">Würfeln</button></div>
-
-<footer>
-         <h3>Machts Spass? Bock auf mehr Funktionen? Nehme gerne Ideen an.</h3>
-         <a href="index.html" class="external-Links" target="_blank" >Home</a>
-         <p style="color: white; text-align: center;">© 2026 by MrMorti. All rights reserved.</p>
-</footer>
-
-
 <!--------------------------------------------------------script------------------------------------------------------->
 
-
-
-            <script>
+<script>
 
                 const dicesymbols = [                                           //Bestimmung von Konstanten für die Bilder der Würfelseiten
                                         "Würfelseiten/Dice1.png",
@@ -230,4 +250,5 @@
                                                                                         
                                                                                
 
-        </body>
+        
+    </html>
