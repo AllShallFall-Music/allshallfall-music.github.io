@@ -15,7 +15,7 @@
                         
                         <section class="Gleichung">
 
-                              <h2 id="Aufgabe" class="Aufgabe">Test</h2>
+                              <h2 id="Aufgabe" class="Aufgabe"></h2>
 
                                     <form onsubmit="pruefen(); return false;">
                                     <input type="number" id="userAntwort" placeholder="0">
@@ -40,6 +40,9 @@
 <!-- ------------------           CSS     -------------------------->
  <style>
    Body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             background-color: black;
             font-family: Arial, sans-serif;
       }
@@ -48,7 +51,7 @@
             margin-top: 50px;
       }
       h1,h2 {
-         
+            
             color: white;
             text-align: center;
                
@@ -59,15 +62,16 @@
             margin-top: 20px;
       }
       .Aufgabencontainer {
-                  display: flex;
-                 
+                  width: 50vw;
+                  display: flex;               
                   align-items: center; 
                   justify-content: center;         
                   background-color: #333;
-                  padding: 20px;
+
+                  padding: 10px;
                   border-radius: 10px;
-                  width: 70vw;
-                  margin: 50px auto;
+                  
+                  margin: 10px ;
 
             }
       
@@ -86,33 +90,36 @@
                   justify-content: center;
                   
                   }
-                  .Aufgabe {
-                  display: flex;
-                  color: white;
-                  margin-right: 5px;
-
-                  
-                  }
+               
                   .Gleichung {
                         display: flex;
                         
                   }
-                  input {
-                        display: flex;
-                        margin: 20px auto;
-                        padding: 10px;
-                        font-size: 16px;
-                        width: 100px;
-                        text-align: center;
+
+
+                        .Aufgabe {
                         
-                  }
-                  button {
-                        display: flex;
-                        margin: 5px;
-                        padding: 10px 20px;
-                        font-size: 16px;
-                        cursor: pointer;
-                  }
+                        color: white;
+                        margin-right: 5px;                     
+                        
+                        }
+                        input {
+                              text-align: center;                     
+                              margin: 20px auto;
+                              padding: 10px;
+                              font-size: 16px;
+                              width: 100px;
+                              
+                              
+                        }
+                        button {
+                              display: flex;
+                              
+                              margin: 5px;
+                              padding: 10px 20px;
+                              font-size: 16px;
+                              cursor: pointer;
+                        }
    
       /* Chrome, Edge, Safari SPin Button entfernen*/
 
@@ -125,8 +132,9 @@
            
             #ueberpruefung {
                   min-height: 24px;
+                  text-align: center;
             }
-            
+
             footer {
                display: flex;
                flex-direction: column;
@@ -135,6 +143,12 @@
 
             a {
                display: flex;
+            }
+            
+            @media (max-width: 600px) {
+                  .Aufgabencontainer {
+                        width: 90vw;
+                  }
             }
 </style>
 
