@@ -284,7 +284,7 @@ body {
                                                                                   /* 2.Funktion aufrufen, damit die Karten gemischt werden. Es wird der Array übergeben, der die Karten enthält. */
                                 mixedcards.forEach(drehbox => {
                                     container.appendChild(drehbox);                                 /* 3.Karten werden in der neuen Reihenfolge dem Container hinzugefügt. Dadurch werden sie auf der Seite in der neuen Reihenfolge angezeigt. */
-                                back.forEach(rueckseite => rueckseite.style.postion="relative");   /* 4. Alle Rückseiten der Karten werden sichtbar gemacht, damit der Spieler die Karten sehen kann. */
+                                back.forEach(rueckseite => rueckseite.style.display = "block    ");   /* 4. Alle Rückseiten der Karten werden sichtbar gemacht, damit der Spieler die Karten sehen kann. */
                                 
                                 }
                                                   );
