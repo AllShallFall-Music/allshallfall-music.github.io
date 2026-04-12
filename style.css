@@ -69,7 +69,13 @@ body {
                             background-color: rgb(37, 33, 33) ;
 
                             }
-                                               
+
+                        .Werbebanner1 {
+                            width: 40vw;
+                        }  
+                        .Werbemarker {
+                            color: rgb(34, 124, 131);
+                        }           
                             img{
 
                                 width: 70vw;
@@ -122,6 +128,7 @@ body {
                             font-size: 50px;
                             font-family: 'Arial Black', Arial, Helvetica, sans-serif;                           
                         }
+
                         
 
                         /* Blogbereich*/
