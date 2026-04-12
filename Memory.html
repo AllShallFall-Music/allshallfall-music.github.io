@@ -6,6 +6,7 @@
             
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="icon" type="image/jpg"  href="Bilder/Favicon_Nr.2.jpg">
+
          </head>
 
 
@@ -221,18 +222,25 @@ body {
                                                 width: 100%;
                                                 height: 100%;
                                                 border-radius: 10px;
+                                                position: absolute;
                                                 object-fit: cover;
+                                                z-index: 1;
                                                                                                                           
+                                            }
+                                            .card-front {
+                                                position: absolute;
+                                                width: 100%;
+                                                height: 100%;
+                                                z-index: 1;
                                             }
                                             .card-back {
                                                 
                                                 background-image: url("Memorybilder/Rückseite.png");
                                                 width: 100%;
                                                 height: 100%;
-                                                position:absolute;  
+                                                position: absolute;
                                                 border-radius: 10px;
-                                                
-                                                          
+                                                z-index: 2;
                                                 cursor: pointer;
                                             }
 
@@ -283,7 +291,7 @@ body {
                                                                                   /* 2.Funktion aufrufen, damit die Karten gemischt werden. Es wird der Array übergeben, der die Karten enthält. */
                                 mixedcards.forEach(drehbox => {
                                     container.appendChild(drehbox);                                 /* 3.Karten werden in der neuen Reihenfolge dem Container hinzugefügt. Dadurch werden sie auf der Seite in der neuen Reihenfolge angezeigt. */
-                                back.forEach(rueckseite => rueckseite.style.display = "block");   /* 4. Alle Rückseiten der Karten werden sichtbar gemacht, damit der Spieler die Karten sehen kann. */
+                                front.forEach(vorderseite => vorderseite.style.display = "block");   /* 4. Alle Vorderseiten der Karten werden sichtbar gemacht, damit der Spieler die Karten sehen kann. */
                                 
                                 }
                                                   );
