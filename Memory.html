@@ -210,13 +210,8 @@ body {
             box-shadow: 0 0 10px #00ffff            
         }
                     
-                    .Spielfeld {
-                        
-                        margin-top: 20px;                
-                        border-style: dashed;
-                        border-color: rgb(41, 146, 146);
-                        border-width: 5px;
-                    }                                                          
+                          
+                                                                            
                             
                             button {              
                                 display: block;
@@ -226,18 +221,24 @@ body {
 
                                 margin: 5px auto;
                                 padding: 10px 20px;              
-                                border: none;
+                                border:solid 2px black;
                                 border-radius: 5px;
                                 
                                 cursor: pointer;
-                            }     
+                            
+                            }
+                            button:hover  {
+                                border:#00ffff solid 2px;
+                                box-shadow: 0 0 10px #00ffff;
+
+                            }  
                             .karten {
                                 display: grid;
                                 grid-template-columns: repeat(4, 150px);
                                 grid-template-rows: repeat(3, 150px);
                                 background-color: rgba(165, 42, 114, 0.281);
                                 gap:20px;
-                                margin:0;
+                                margin:10px;
                                 padding:20px;
 
                                 border-style: double;
@@ -273,6 +274,7 @@ body {
                                                 border-radius: 10px;
                                                 z-index: 2;
                                                 cursor: pointer;
+
                                             }
 
                     footer {

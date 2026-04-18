@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+            
+         <head>
+            <meta charset="UTF-8">
+            <title>MusicTheory with AllShallFall First official site. Music an more!</title>
+            <link rel="stylesheet" href="notesEasy.css">
+            <script src="https://unpkg.com/tone"></script>
+            <script src="notesEasy.js"></script>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="icon" type="image/jpg"  href="Bilder/Favicon_Nr.2.jpg">
+         </head>
+
+     <body>
+        <header>
+            <h1>Music Theory. The Game 🎹</h1>
+        </header>
+
+            <div class="Aufgabe">
+                <h2>Finde die richtige Taste</h2>
+                <button onclick="neueAufgabe()">Gib mir eine Note </button>
+
+                <p class="Abfrage" id="Notenabfrage">&nbsp;</p> <!-- Zu spielende Note -->
+
+                <div class="klavier" id="userInput">
+                    <!-- Weiße Tasten -->
+                    <div class="white" onclick="play('C4'); checkAnswer('C4')"></div>
+                    <div class="white" onclick="play('D4'); checkAnswer('D4')"></div>
+                    <div class="white" onclick="play('E4'); checkAnswer('E4')"></div>
+                    <div class="white" onclick="play('F4'); checkAnswer('F4')"></div>
+                    <div class="white" onclick="play('G4'); checkAnswer('G4')"></div>
+                    <div class="white" onclick="play('A4'); checkAnswer('A4')"></div>
+                    <div class="white" onclick="play('B4'); checkAnswer('B4')"></div>
+
+                    <!-- Schwarze Tasten -->
+                    <div class="black" style="left:27px" onclick="play('C#4'); checkAnswer('C#4')"></div>
+                    <div class="black" style="left:67px" onclick="play('D#4'); checkAnswer('D#4')"></div>
+                    <div class="black" style="left:147px" onclick="play('F#4'); checkAnswer('F#4')"></div>
+                    <div class="black" style="left:187px" onclick="play('G#4'); checkAnswer('G#4')"></div>
+                    <div class="black" style="left:227px" onclick="play('A#4'); checkAnswer('A#4')"></div>
+                </div>
+            </div>
+        
+
+
+
+
+
+
+        <footer>
+                <p>Copyright © 2026 AllShallFall. Alle Rechte vorbehalten.</p>
+        </footer>
+     </body> 
+     
+     
+</html>
