@@ -37,31 +37,28 @@ function updateStreakDisplay() {
 }
 
 function neueAufgabe()  {
-  givenNote = notes [Math.floor(Math.random() * notes.length)];
+  givenNote = notes[Math.floor(Math.random() * notes.length)];
   document.getElementById("Notenabfrage").textContent = "Spiele die Note: " + givenNote.display + " 🎶";
 }
 
 function checkAnswer(note) {
-
-    const FEEDBACK = document.getElementById("Notenabfrage");
+  const FEEDBACK = document.getElementById("Notenabfrage");
 
   if (!givenNote) return;
 
   if (note === givenNote.value) {
-    FEEDBACK.textContent = "Richtig! Gut gemacht.🎶";
     streak++;
+    FEEDBACK.textContent = "Richtig! Gut gemacht.🎶";
   } else {
-    FEEDBACK.textContent = "Falsch, versuche es noch einmal.";
     streak = 0;
+    FEEDBACK.textContent = "Falsch, versuche es noch einmal.";
   }
 
-  updateStreakDisplay();
+ updateStreakDisplay(); 
 }
+
 
 window.addEventListener("load", () => {
   neueAufgabe();
   updateStreakDisplay();
 });
-
-// Start first task when page loads
-// window.addEventListener("load", neueAufgabe);
