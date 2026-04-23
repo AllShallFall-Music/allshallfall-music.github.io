@@ -1,0 +1,114 @@
+const synth = new Tone.Synth().toDestination(); // Initialize Tone.js synthesizer
+
+
+// Play the given note using Tone.js
+function play(note) { 
+  Tone.start();
+  synth.triggerAttackRelease(note, "8n");
+}
+// Variables to store the current note to be played and the user's current streak of correct answers
+
+// Array of notes with display names and corresponding MIDI values
+const notes = [
+  { display: "C", value: "C4" }, //1 Value ist die MIDI-Note, die gespielt wird, Display ist die Note, die angezeigt wird
+  { display: "D", value: "D4" }, //2 Die Zahlen sind die Zuordnungen für die Funktion check
+  { display: "E", value: "E4" }, //3
+  { display: "F", value: "F4" }, //4
+  { display: "G", value: "G4" }, //5
+  { display: "A", value: "A4" }, //6
+  { display: "B", value: "B4" }, //7
+];
+
+
+let givenNote = "";
+let streak = 0;
+
+function neueAufgabe() { //zu spielende Note wird generiert und angezeigt
+    givenNote = notes [Math.floor(Math.random() * notes.length)]; // Hier wird eine zufällige Note aus dem  Array "notes" ausgewählt (Etwas zwischen 0 und 1 * 1-7  )
+        document.getElementById("Notenabfrage").textContent = "Spiele die Note 🎶: " + givenNote.display; // Gibt die Note in einfacher Form aus
+        notetoClick(givenNote.value); // Zeige die Note auf dem Notensystem an
+
+}
+
+function noteExample() {                        // Hier wird ein Beispiel für die Notendarstellung mit VexFlow gezeigt
+
+    const Vex = window.Vex;                     //  Hier wird die VexFlow-Bibliothek aus dem globalen Fensterobjekt abgerufen, um sie in der Funktion zu verwenden
+ 
+      const container = document.getElementById('boo'); // HTML-Element wird ausgewählt, um die Notendarstellung darin zu platzieren
+        container.innerHTML = '';               //Inhalt des Containers wird geleert, um Platz für die neue Notendarstellung zu schaffen
+
+    try {                                       //Try bedeutet "versuche diesen Code auszuführen, und wenn ein Fehler auftritt, fange ihn ab und führe den Code im catch-Block aus"
+        const vf = new Vex.Flow.Factory({renderer: {elementId: 'boo', width: 90, height: 150}}); // Hier wird eine neue VexFlow-Factory erstellt, die den Container "boo" verwendet und eine Breite von 150px und eine Höhe von 150px hat
+        const score = vf.EasyScore();           // Hier wird ein EasyScore-Objekt erstellt, um die Noten zu verwalten
+        const system = vf.System();             // Hier wird ein System-Objekt erstellt, um die Noten auf dem Notenblatt anzuordnen
+        const voice = score.voice(score.notes('C4/q')).setStrict(false); // Hier wird eine Stimme mit einer Viertelnote C4 erstellt
+
+        system.addStave({                       // Hier wird ein Notensystem hinzugefügt, das die Stimme enthält
+        voices: [voice]
+        }).addClef('treble');     // Hier wird der Violinschlüssel hinzugefügt
+
+    vf.draw();                                  // Hier wird die Notendarstellung gezeichnet}
+    }             
+    catch(e) {
+        console.error('Error drawing note on staff:', e);
+    }
+}
+
+function notetoClick(noteValue) {   //Note übernehmen aus neu generierter Note, die der Spieler spielen soll, und diese Note auf dem Notensystem anzeigen
+  const Vex = window.Vex;
+  
+  try {
+    const container = document.getElementById('boo');
+    container.innerHTML = '';
+    
+    const vf = new Vex.Flow.Factory({renderer: {elementId: 'boo', width: 90, height: 150}});
+    const score = vf.EasyScore();
+    const system = vf.System();
+    const voice = score.voice(score.notes(`${noteValue}/q`)).setStrict(false);
+    
+    system.addStave({
+      voices: [voice]
+    }).addClef('treble');
+    
+    vf.draw();
+  } 
+  catch(e) {
+    console.error('Error drawing note on staff:', e);
+  }
+}
+
+function mystreakcounter() {
+    
+    const Zähler = document.getElementById("streakCounter"); // Streak Counter wird ausgewählt und in der Variable "Zähler" gespeichert
+
+    if (Zähler) {
+        Zähler.textContent = `Aktuelle Serie: ${streak} richtige Antwort${streak === 1 ? "" : "en"} in Folge`; // Hier wird die aktuelle Serie von richtigen Antworten angezeigt
+    }
+
+}
+
+function checkAnswer(note) { // Hier wird überprüft, ob die gespielte Note mit der generierten Note übereinstimmt
+    const Feedback = document.getElementById("Notenabfrage"); // Hier wird das Element mit der ID "Notenabfrage" ausgewählt, um später Feedback anzuzeigen
+
+    if (!givenNote) return; // Wenn keine Note generiert wurde, wird die Funktion verlassen
+
+    if (note === givenNote.value) { // Wenn die gespielte Note mit der generierten Note übereinstimmt
+        Feedback.textContent = "Richtig! Gut gemacht.🎶"; // Feedback für richtige Antwort
+        streak++;
+    } else {
+        Feedback.textContent = "Falsch 💩, versuche es noch einmal."; // Feedback für falsche Antwort
+        streak = 0;
+    }
+
+    mystreakcounter();
+}
+
+// Initialisiere die Seite auf dem Laden
+window.addEventListener('DOMContentLoaded', neueAufgabe);
+
+document.addEventListener("DOMContentLoaded", () => { 
+    mystreakcounter(); // Streak Counter wird aktualisiert, wenn die Seite geladen wird  
+    noteExample();
+    neueAufgabe(); // Neue Aufgabe wird generiert, wenn die Seite geladen wird
+    
+});
