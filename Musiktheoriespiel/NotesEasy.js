@@ -1,7 +1,5 @@
 
 const synth = new Tone.Synth().toDestination(); // Initialize Tone.js synthesizer
-// Array of notes with display names and corresponding MIDI values
-
 // Play the given note using Tone.js
 function play(note) { 
   Tone.start();
@@ -16,7 +14,7 @@ const notes = [
   { display: "D#", value: "D#4", alt: "Eb4" },
   { display: "Eb", value: "Eb4", alt: "D#4" },
   { display: "E", value: "E4" },
-  { display: "Fb", value: "Fb4", alt: "E#4" },
+  { display: "Fb", value: "Fb4", alt: "E4" },
   { display: "F", value: "F4" },
   { display: "F#", value: "F#4", alt: "Gb4" },
   { display: "Gb", value: "Gb4", alt: "F#4" },

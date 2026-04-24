@@ -1,13 +1,9 @@
 const synth = new Tone.Synth().toDestination(); // Initialize Tone.js synthesizer
-
-
 // Play the given note using Tone.js
 function play(note) { 
   Tone.start();
   synth.triggerAttackRelease(note, "8n");
 }
-// Variables to store the current note to be played and the user's current streak of correct answers
-
 // Array of notes with display names and corresponding MIDI values
 const notes = [
   { display: "C", value: "C4" }, //1 Value ist die MIDI-Note, die gespielt wird, Display ist die Note, die angezeigt wird
