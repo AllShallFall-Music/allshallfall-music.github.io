@@ -128,5 +128,5 @@ function checkAnswer(element, note) { // Hier wird überprüft, ob die gespielte
 window.addEventListener('DOMContentLoaded', () => {
     mystreakcounter(); // Streak Counter wird aktualisiert, wenn die Seite geladen wird
     noteExample();
-    neueAufgabe(); // Neue Aufgabe wird generiert, wenn die Seite geladen wird
+    
 });
