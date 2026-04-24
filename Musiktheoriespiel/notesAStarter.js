@@ -23,12 +23,17 @@ const notes = [
 let givenNote = "";
 let streak = 0;
 
-function neueAufgabe() { //zu spielende Note wird generiert und angezeigt
+function neueAufgabe() {                        //zu spielende Note wird generiert und angezeigt
     givenNote = notes [Math.floor(Math.random() * notes.length)]; // Hier wird eine zufällige Note aus dem  Array "notes" ausgewählt (Etwas zwischen 0 und 1 * 1-7  )
         document.getElementById("Notenabfrage").textContent = "Spiele die Note 🎶: " + givenNote.display; // Gibt die Note in einfacher Form aus
-        notetoClick(givenNote.value); // Zeige die Note auf dem Notensystem an
+        notetoClick(givenNote.value);           // Zeige die Note auf dem Notensystem an
 
 }
+function handleClick(element, note) {           // Hier wird die gespielte Note übergeben, wenn eine Taste angeklickt wird
+    play(note);
+    checkAnswer(element, note); // Hier wird überprüft, ob die gespielte Note mit der generierten Note übereinstimmt
+}
+
 
 function noteExample() {                        // Hier wird ein Beispiel für die Notendarstellung mit VexFlow gezeigt
 
@@ -45,7 +50,7 @@ function noteExample() {                        // Hier wird ein Beispiel für d
 
         system.addStave({                       // Hier wird ein Notensystem hinzugefügt, das die Stimme enthält
         voices: [voice]
-        }).addClef('treble');     // Hier wird der Violinschlüssel hinzugefügt
+        }).addClef('treble');                   // Hier wird der Violinschlüssel hinzugefügt
 
     vf.draw();                                  // Hier wird die Notendarstellung gezeichnet}
     }             
@@ -54,7 +59,7 @@ function noteExample() {                        // Hier wird ein Beispiel für d
     }
 }
 
-function notetoClick(noteValue) {   //Note übernehmen aus neu generierter Note, die der Spieler spielen soll, und diese Note auf dem Notensystem anzeigen
+function notetoClick(noteValue) {               //Note übernehmen aus neu generierter Note, die der Spieler spielen soll, und diese Note auf dem Notensystem anzeigen
   const Vex = window.Vex;
   
   try {
@@ -87,28 +92,42 @@ function mystreakcounter() {
 
 }
 
-function checkAnswer(note) { // Hier wird überprüft, ob die gespielte Note mit der generierten Note übereinstimmt
+function checkAnswer(element, note) { // Hier wird überprüft, ob die gespielte Note mit der generierten Note übereinstimmt
     const Feedback = document.getElementById("Notenabfrage"); // Hier wird das Element mit der ID "Notenabfrage" ausgewählt, um später Feedback anzuzeigen
 
     if (!givenNote) return; // Wenn keine Note generiert wurde, wird die Funktion verlassen
 
+    // Entferne vorherige Farben
+    element.classList.remove("correct", "wrong");
+
     if (note === givenNote.value) { // Wenn die gespielte Note mit der generierten Note übereinstimmt
         Feedback.textContent = "Richtig! Gut gemacht.🎶"; // Feedback für richtige Antwort
-        streak++;
+        element.classList.add("correct"); // Hier wird die angeklickte Taste mit der Klasse "correct" versehen, um visuelles Feedback zu geben
+        streak++; // Streak wird erhöht
+
+        // Nach 1 Sekunde wird eine neue Aufgabe generiert
+        setTimeout(() => {
+            element.classList.remove("correct");
+            neueAufgabe();
+        }, 1000);
+
     } else {
         Feedback.textContent = "Falsch 💩, versuche es noch einmal."; // Feedback für falsche Antwort
-        streak = 0;
+        element.classList.add("wrong"); // Hier wird die angeklickte Taste mit der Klasse "wrong" versehen, um visuelles Feedback zu geben
+        streak = 0; // Streak wird zurückgesetzt
+
+        // Entferne die rote Farbe nach 1 Sekunde
+        setTimeout(() => {
+            element.classList.remove("wrong");
+        }, 1000);
     }
 
     mystreakcounter();
 }
 
 // Initialisiere die Seite auf dem Laden
-window.addEventListener('DOMContentLoaded', neueAufgabe);
-
-document.addEventListener("DOMContentLoaded", () => { 
-    mystreakcounter(); // Streak Counter wird aktualisiert, wenn die Seite geladen wird  
+window.addEventListener('DOMContentLoaded', () => {
+    mystreakcounter(); // Streak Counter wird aktualisiert, wenn die Seite geladen wird
     noteExample();
     neueAufgabe(); // Neue Aufgabe wird generiert, wenn die Seite geladen wird
-    
 });
