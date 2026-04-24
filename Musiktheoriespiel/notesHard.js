@@ -111,7 +111,7 @@ function noteExample() {                        // Hier wird ein Beispiel für d
         const vf = new Vex.Flow.Factory({renderer: {elementId: 'boo', width: 90, height: 200}}); // Hier wird eine neue VexFlow-Factory erstellt, die den Container "boo" verwendet und eine Breite von 150px und eine Höhe von 150px hat
         const score = vf.EasyScore();           // Hier wird ein EasyScore-Objekt erstellt, um die Noten zu verwalten
         const system = vf.System();             // Hier wird ein System-Objekt erstellt, um die Noten auf dem Notenblatt anzuordnen
-        const voice = score.voice(score.notes('Cb4')).setStrict(false); // Hier wird eine Stimme mit einer Viertelnote C4 erstellt
+        const voice = score.voice(score.notes('G4/wr')).setStrict(false); // Hier wird eine Stimme mit einer Viertelnote C4 erstellt
 
         system.addStave({                       // Hier wird ein Notensystem hinzugefügt, das die Stimme enthält
         voices: [voice]
@@ -171,7 +171,7 @@ function mystreakcounter() {
 
 function checkAnswer(element, note) { // Hier wird überprüft, ob die gespielte Note mit der generierten Note übereinstimmt
     const Feedback = document.getElementById("Notenabfrage"); // Hier wird das Element mit der ID "Notenabfrage" ausgewählt, um später Feedback anzuzeigen
-
+    const circle = document.getElementById("autoNext").checked; // Setze autoNext auf true, um automatisch zur nächsten Aufgabe zu wechseln
     if (!givenNote) return; // Wenn keine Note generiert wurde, wird die Funktion verlassen
 
     // Entferne vorherige Farben
@@ -188,7 +188,7 @@ function checkAnswer(element, note) { // Hier wird überprüft, ob die gespielte
         // Nach 1 Sekunde wird eine neue Aufgabe generiert
         setTimeout(() => {
             element.classList.remove("correct");
-            neueAufgabe();
+            circle ? neueAufgabe() : null; // Wenn autoNext aktiviert ist, wird eine neue Aufgabe generiert
         }, 1000);
 
     } else {
@@ -209,6 +209,6 @@ function checkAnswer(element, note) { // Hier wird überprüft, ob die gespielte
 window.addEventListener('DOMContentLoaded', () => {
     mystreakcounter(); // Streak Counter wird aktualisiert, wenn die Seite geladen wird
     noteExample();
-    neueAufgabe(); // Neue Aufgabe wird generiert, wenn die Seite geladen wird
+    //neueAufgabe(); // Neue Aufgabe wird generiert, wenn die Seite geladen wird
 });
 

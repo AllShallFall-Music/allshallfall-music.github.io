@@ -101,7 +101,7 @@ function mystreakcounter() {
 
 function checkAnswer(element, note) { // Hier wird überprüft, ob die gespielte Note mit der generierten Note übereinstimmt
     const Feedback = document.getElementById("Notenabfrage"); // Hier wird das Element mit der ID "Notenabfrage" ausgewählt, um später Feedback anzuzeigen
-
+    const circle = document.getElementById("autoNext").checked; // Setze autoNext auf true, um automatisch zur nächsten Aufgabe zu wechseln
     if (!givenNote) return; // Wenn keine Note generiert wurde, wird die Funktion verlassen
 
     // Entferne vorherige Farben
@@ -116,7 +116,7 @@ function checkAnswer(element, note) { // Hier wird überprüft, ob die gespielte
         // Nach 1 Sekunde wird eine neue Aufgabe generiert
         setTimeout(() => {
             element.classList.remove("correct");
-            neueAufgabe();
+            circle ? neueAufgabe() : null; // Wenn autoNext aktiviert ist, wird eine neue Aufgabe generiert
         }, 1000);
 
     } else {
