@@ -112,7 +112,7 @@ function noteExample() {                        // Hier wird ein Beispiel für d
         container.innerHTML = '';               //Inhalt des Containers wird geleert, um Platz für die neue Notendarstellung zu schaffen
 
     try {                                       //Try bedeutet "versuche diesen Code auszuführen, und wenn ein Fehler auftritt, fange ihn ab und führe den Code im catch-Block aus"
-        const vf = new Vex.Flow.Factory({renderer: {elementId: 'boo', width: 90, height: 200}}); // Hier wird eine neue VexFlow-Factory erstellt, die den Container "boo" verwendet und eine Breite von 150px und eine Höhe von 150px hat
+        const vf = new Vex.Flow.Factory({renderer: {elementId: 'boo', width: 90, height: 150}}); // Hier wird eine neue VexFlow-Factory erstellt, die den Container "boo" verwendet und eine Breite von 150px und eine Höhe von 150px hat
         const score = vf.EasyScore();           // Hier wird ein EasyScore-Objekt erstellt, um die Noten zu verwalten
         const system = vf.System();             // Hier wird ein System-Objekt erstellt, um die Noten auf dem Notenblatt anzuordnen
         const voice = score.voice(score.notes('G4/wr')).setStrict(false); // Hier wird eine Stimme mit einer Viertelnote C4 erstellt

@@ -41,10 +41,15 @@
     .Notesystem.hard {
         display: flex;
         font-display:center ;
-        align-items: center;
+        align-items: center;;
         border: 1px solid rgb(218, 13, 13);
         padding: 10px;
     }
+        @media (max-width: 600px) {
+            .Notesystem.hard {
+                max-width: 90vw;
+            }
+        }
     
     #boo {
         background-color: thistle;
